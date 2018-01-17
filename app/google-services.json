@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "90082227758",
+    "firebase_url": "https://chottky.firebaseio.com",
+    "project_id": "chottky",
+    "storage_bucket": "chottky.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90082227758:android:e5ba299650666560",
+        "android_client_info": {
+          "package_name": "com.gayelak.gayelakandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90082227758-t0achtmv9fu119ulldvhtdurchrus7id.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXnC5oTCGe1GV7xmc-cSSE6UgFe1e5ck8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
