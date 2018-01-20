@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="تصفح" />
+
+        <item
+            android:id="@+id/nav_sell"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="بيع منتجاتك" />
+
+
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/ic_chat_black_24dp"
+            android:title="الرسائل" />
+
+
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="الاشعارات" />
+
+        <item
+            android:id="@+id/nav_discover"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="اكتشف" />
+        <item
+            android:id="@+id/nav_profile_picture"
+            android:icon="@drawable/ic_account_box_black_24dp"
+            android:title="الصفحة الشخصية" />
+        <item
+            android:id="@+id/nav_invite_facebook_friends"
+            android:icon="@drawable/ic_supervisor_account_black_24dp"
+            android:title="ادعو اصحاب الفيسبوك" />
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help_black_24dp"
+            android:title="المساعدة" />
+    </group>
+
+</menu>

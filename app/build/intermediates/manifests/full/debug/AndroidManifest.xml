@@ -36,11 +36,6 @@
         <activity
             android:name="com.gayelak.gayelakandroid.WelcomeActivity"
             android:theme="@style/AppThemeNoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
@@ -51,6 +46,29 @@
             android:name="com.gayelak.gayelakandroid.RegisterActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name="com.gayelak.gayelakandroid.LoginActivity"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name="com.gayelak.gayelakandroid.ForgotPasswordActivity"
+            android:label="اعادة كلمة السر" />
+        <activity
+            android:name="com.gayelak.gayelakandroid.BrowsingActivity"
+            android:label="تصفح"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
@@ -141,9 +159,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="android.arch.lifecycle.VERSION"
-            android:value="27.0.0-SNAPSHOT" />
     </application>
 
 </manifest>

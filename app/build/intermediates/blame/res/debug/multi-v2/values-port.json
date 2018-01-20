@@ -4,7 +4,7 @@
             "outputFile": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1a2899ab53bdd89251b28cffac5eeaec/res/values-port/values-port.xml",
+                    "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/values-port/values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

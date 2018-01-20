@@ -15,6 +15,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
     }
 
+
+
+
     public void onClickRegister(View view)
     {
 
@@ -23,6 +26,18 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
     }
+
+    public void onClickLogin(View view)
+    {
+
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+
+
+
+    }
+
 
 
 }
