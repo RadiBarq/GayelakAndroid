@@ -16,9 +16,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".WelcomeActivity"
-            android:theme="@style/AppThemeNoActionBar">
-
-        </activity>
+            android:theme="@style/AppThemeNoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
@@ -33,26 +31,31 @@
             android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".ForgotPasswordActivity"
-            android:label="اعادة كلمة السر"></activity>
+            android:label="اعادة كلمة السر" />
         <activity
             android:name=".BrowsingActivity"
             android:label="تصفح"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:theme="@style/AppThemeNoActionBarProfile">
+
+        </activity>
+        <activity android:name=".ProfileSettingsActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" ></category>
-
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
-            <meta-data android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
-
 
         </activity>
     </application>

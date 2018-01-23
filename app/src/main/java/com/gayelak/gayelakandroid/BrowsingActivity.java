@@ -18,6 +18,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.Toast;
 
 import java.io.Console;
 
@@ -50,9 +53,17 @@ public class BrowsingActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
+        GridView gridview = (GridView) findViewById(R.id.gridview);
+        gridview.setAdapter(new ImageAdapter(this));
+
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+                Toast.makeText(BrowsingActivity.this, "" + position,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
-
 
     @Override
     public void onBackPressed() {
@@ -70,7 +81,6 @@ public class BrowsingActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.browsing, menu);
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-
 
         searchView.setOnQueryTextListener(
 
@@ -97,8 +107,6 @@ public class BrowsingActivity extends AppCompatActivity
 
         );
 
-
-
         return true;
     }
 
@@ -108,7 +116,6 @@ public class BrowsingActivity extends AppCompatActivity
 
 
         System.out.println(query);
-
 
     }
 
@@ -130,22 +137,6 @@ public class BrowsingActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-//        int id = item.getItemId();
-
-  //      if (id == R.id.nav_camera) {
-            // Handle the camera action
-    //    } else if (id == R.id.nav_gallery) {
-
-      //  } else if (id == R.id.nav_slideshow) {
-
-        //} else if (id == R.id.nav_manage) {
-
-        //} else if (id == R.id.nav_share) {
-
-        //} else if (id == R.id.nav_send) {
-
-        //}
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

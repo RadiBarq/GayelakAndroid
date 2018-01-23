@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-60:12
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-63:12
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/69f5d56f9c0f59d6bfff596f2f0f349f/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-storage:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.8.0.aar/51964aa61369d12cae67052dd622e3eb/AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/223ebd2a6f669591eeb9f53526a28be9/AndroidManifest.xml:17:1-32:12
@@ -11,6 +11,7 @@ MERGED from [com.google.firebase:firebase-database:11.8.0] /Users/radibarq/.grad
 MERGED from [com.google.firebase:firebase-perf:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-perf-11.8.0.aar/bc5a22c0a81c39a1e26b0128bd3bfb8f/AndroidManifest.xml:17:1-35:12
 MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/292d417f56716d6cb077fe9310290023/AndroidManifest.xml:17:1-37:12
 MERGED from [com.airbnb.android:lottie:2.5.0-beta3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/lottie-2.5.0-beta3.aar/20695f95010f3fbdd2e849041127b649/AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/118114fdf1a1c69557f5a0d86d635b1d/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/65aed2b755f9e1d97761bedcb307739f/AndroidManifest.xml:2:1-11:12
@@ -23,14 +24,21 @@ MERGED from [com.google.firebase:firebase-common:11.8.0] /Users/radibarq/.gradle
 MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/3e994a226f438b2833c2e4fb4db2690b/AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/06b466cc24f3bd40916e9f09fec6e39e/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/5fa9b170919075c7f164ebf5db92023c/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/012d2f92d8322a11136ae7c007a6dc67/AndroidManifest.xml:17:1-31:12
 MERGED from [com.google.firebase:firebase-storage-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.8.0.aar/aad464861a214d66dfbabfe4de53baa6/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/358b46e8b935603a4775db0f66c4ab01/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-database-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.8.0.aar/478747e23c4fb3d6fb5149daf159e113/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-perf-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-perf-license-11.8.0.aar/e05b1b322c40fc07ea4e527b591aabff/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/97f162b92d676fafb975c555c8c57a2a/AndroidManifest.xml:2:1-6:12
-MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/012d2f92d8322a11136ae7c007a6dc67/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2e1f4a6bb874d7428a6e86c838c3d5a/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/a1f211399bb37ce4af45bd8cd0078409/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/ae3dbf8eb1df2e18915cb0b8044202b5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/4a11cab360316f67d6843543868f306a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/35536bc1d79d2a35b9a223762e0a346b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/6b74de9618241012aa232c4b2600374f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/5878fbf14d25bc253bf2af7f736caff3/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/aa59a681196a83eb8796ed150c8b49f6/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.8.0.aar/febf0cfb707b8b879997f749c59efbaf/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/ec096a7c1a0de4eea1c20649a760fc28/AndroidManifest.xml:2:1-6:12
@@ -39,29 +47,22 @@ MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/r
 MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/2d66ebc852e9a92a2587d7f4b5f615e0/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.8.0.aar/c87b85c20f0911423f48185f9dc8ee85/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/39ff28ba08b4161c271b2fc0023f7fca/AndroidManifest.xml:2:1-6:12
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/a1f211399bb37ce4af45bd8cd0078409/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/ae3dbf8eb1df2e18915cb0b8044202b5/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/4a11cab360316f67d6843543868f306a/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/6b74de9618241012aa232c4b2600374f/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/35536bc1d79d2a35b9a223762e0a346b/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/5878fbf14d25bc253bf2af7f736caff3/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/bafc91bde281fe72f7e229278c55ca31/AndroidManifest.xml:2:1-6:12
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/f33d9864d51e4acf348967525c53c7e0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-60:12
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/bafc91bde281fe72f7e229278c55ca31/AndroidManifest.xml:2:1-6:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-63:12
 	package
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-60:12
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-63:12
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-60:12
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-63:12
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:11-69
@@ -78,7 +79,7 @@ ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest
 	android:name
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:8:22-69
 application
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:10:5-58:19
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:10:5-61:19
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/69f5d56f9c0f59d6bfff596f2f0f349f/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/69f5d56f9c0f59d6bfff596f2f0f349f/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/223ebd2a6f669591eeb9f53526a28be9/AndroidManifest.xml:22:5-30:19
@@ -89,6 +90,8 @@ MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/radibarq/.gra
 MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/292d417f56716d6cb077fe9310290023/AndroidManifest.xml:22:5-35:19
 MERGED from [com.airbnb.android:lottie:2.5.0-beta3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/lottie-2.5.0-beta3.aar/20695f95010f3fbdd2e849041127b649/AndroidManifest.xml:12:5-20
 MERGED from [com.airbnb.android:lottie:2.5.0-beta3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/lottie-2.5.0-beta3.aar/20695f95010f3fbdd2e849041127b649/AndroidManifest.xml:12:5-20
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/118114fdf1a1c69557f5a0d86d635b1d/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/118114fdf1a1c69557f5a0d86d635b1d/AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/65aed2b755f9e1d97761bedcb307739f/AndroidManifest.xml:9:5-20
@@ -107,6 +110,10 @@ MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/radibarq/
 MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/06b466cc24f3bd40916e9f09fec6e39e/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/5fa9b170919075c7f164ebf5db92023c/AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/5fa9b170919075c7f164ebf5db92023c/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/012d2f92d8322a11136ae7c007a6dc67/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/012d2f92d8322a11136ae7c007a6dc67/AndroidManifest.xml:25:5-29:19
 MERGED from [com.google.firebase:firebase-storage-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.8.0.aar/aad464861a214d66dfbabfe4de53baa6/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-storage-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.8.0.aar/aad464861a214d66dfbabfe4de53baa6/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/358b46e8b935603a4775db0f66c4ab01/AndroidManifest.xml:5:5-20
@@ -117,12 +124,10 @@ MERGED from [com.google.firebase:firebase-perf-license:11.8.0] /Users/radibarq/.
 MERGED from [com.google.firebase:firebase-perf-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-perf-license-11.8.0.aar/e05b1b322c40fc07ea4e527b591aabff/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/97f162b92d676fafb975c555c8c57a2a/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/97f162b92d676fafb975c555c8c57a2a/AndroidManifest.xml:5:5-20
-MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/012d2f92d8322a11136ae7c007a6dc67/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/012d2f92d8322a11136ae7c007a6dc67/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2e1f4a6bb874d7428a6e86c838c3d5a/AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2e1f4a6bb874d7428a6e86c838c3d5a/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:25:5-29:19
 MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/aa59a681196a83eb8796ed150c8b49f6/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/aa59a681196a83eb8796ed150c8b49f6/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.8.0.aar/febf0cfb707b8b879997f749c59efbaf/AndroidManifest.xml:5:5-20
@@ -139,8 +144,6 @@ MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] /U
 MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.8.0.aar/c87b85c20f0911423f48185f9dc8ee85/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/39ff28ba08b4161c271b2fc0023f7fca/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/39ff28ba08b4161c271b2fc0023f7fca/AndroidManifest.xml:5:5-20
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:25:5-29:19
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/bafc91bde281fe72f7e229278c55ca31/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/bafc91bde281fe72f7e229278c55ca31/AndroidManifest.xml:5:5-20
 	android:supportsRtl
@@ -156,67 +159,77 @@ MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/
 	android:theme
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:16:9-40
 activity#com.gayelak.gayelakandroid.WelcomeActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:17:9-21:20
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:17:9-19:58
 	android:theme
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:19:13-55
 	android:name
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:18:13-44
 meta-data#preloaded_fonts
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:23:9-25:57
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:21:9-23:57
 	android:resource
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:25:13-54
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:23:13-54
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:24:13-43
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:22:13-43
 activity#com.gayelak.gayelakandroid.RegisterActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:27:9-30:58
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:25:9-28:58
 	android:label
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:29:13-60
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:27:13-60
 	android:theme
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:30:13-55
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:28:13-55
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:28:13-45
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:26:13-45
 activity#com.gayelak.gayelakandroid.LoginActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:31:9-33:58
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:29:9-31:58
 	android:theme
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:33:13-55
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:31:13-55
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:32:13-42
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:30:13-42
 activity#com.gayelak.gayelakandroid.ForgotPasswordActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:34:9-36:56
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:32:9-34:47
 	android:label
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:36:13-44
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:34:13-44
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:35:13-51
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:33:13-51
 activity#com.gayelak.gayelakandroid.BrowsingActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:37:9-57:20
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:35:9-46:20
 	android:label
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:39:13-33
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:37:13-33
 	android:theme
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:40:13-56
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:38:13-56
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:38:13-45
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:43:13-48:29
-action#android.intent.action.MAIN
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:44:17-69
-	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:44:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:46:17-87
-	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:46:27-74
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:36:13-45
 intent-filter#android.intent.action.SEARCH
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:50:13-52:29
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:39:13-41:29
 action#android.intent.action.SEARCH
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:51:17-71
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:40:17-71
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:51:25-68
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:40:25-68
 meta-data#android.app.searchable
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:53:13-54:53
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:43:13-45:54
 	android:resource
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:54:17-51
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:45:17-51
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:53:24-61
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:44:17-54
+activity#com.gayelak.gayelakandroid.ProfileActivity
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:47:9-51:20
+	android:theme
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:49:13-62
+	android:name
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:48:13-44
+activity#com.gayelak.gayelakandroid.ProfileSettingsActivity
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:52:9-60:20
+	android:name
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:52:19-58
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:54:13-58:29
+action#android.intent.action.MAIN
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:55:17-69
+	android:name
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:55:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:57:17-77
+	android:name
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:57:27-74
 uses-sdk
 INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
@@ -235,6 +248,8 @@ MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/radibarq/.gra
 MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/292d417f56716d6cb077fe9310290023/AndroidManifest.xml:20:5-44
 MERGED from [com.airbnb.android:lottie:2.5.0-beta3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/lottie-2.5.0-beta3.aar/20695f95010f3fbdd2e849041127b649/AndroidManifest.xml:8:5-10:41
 MERGED from [com.airbnb.android:lottie:2.5.0-beta3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/lottie-2.5.0-beta3.aar/20695f95010f3fbdd2e849041127b649/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/118114fdf1a1c69557f5a0d86d635b1d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/118114fdf1a1c69557f5a0d86d635b1d/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/AndroidManifest.xml:20:5-44
@@ -259,6 +274,10 @@ MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/radibarq/
 MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/06b466cc24f3bd40916e9f09fec6e39e/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/5fa9b170919075c7f164ebf5db92023c/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/5fa9b170919075c7f164ebf5db92023c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/012d2f92d8322a11136ae7c007a6dc67/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/012d2f92d8322a11136ae7c007a6dc67/AndroidManifest.xml:21:5-23:54
 MERGED from [com.google.firebase:firebase-storage-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.8.0.aar/aad464861a214d66dfbabfe4de53baa6/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-storage-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.8.0.aar/aad464861a214d66dfbabfe4de53baa6/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/358b46e8b935603a4775db0f66c4ab01/AndroidManifest.xml:4:5-43
@@ -269,12 +288,22 @@ MERGED from [com.google.firebase:firebase-perf-license:11.8.0] /Users/radibarq/.
 MERGED from [com.google.firebase:firebase-perf-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-perf-license-11.8.0.aar/e05b1b322c40fc07ea4e527b591aabff/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/97f162b92d676fafb975c555c8c57a2a/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/97f162b92d676fafb975c555c8c57a2a/AndroidManifest.xml:4:5-43
-MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/012d2f92d8322a11136ae7c007a6dc67/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/012d2f92d8322a11136ae7c007a6dc67/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2e1f4a6bb874d7428a6e86c838c3d5a/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b2e1f4a6bb874d7428a6e86c838c3d5a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/a1f211399bb37ce4af45bd8cd0078409/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/a1f211399bb37ce4af45bd8cd0078409/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/ae3dbf8eb1df2e18915cb0b8044202b5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/ae3dbf8eb1df2e18915cb0b8044202b5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/4a11cab360316f67d6843543868f306a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/4a11cab360316f67d6843543868f306a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/35536bc1d79d2a35b9a223762e0a346b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/35536bc1d79d2a35b9a223762e0a346b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/6b74de9618241012aa232c4b2600374f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/6b74de9618241012aa232c4b2600374f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/5878fbf14d25bc253bf2af7f736caff3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/5878fbf14d25bc253bf2af7f736caff3/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/aa59a681196a83eb8796ed150c8b49f6/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/aa59a681196a83eb8796ed150c8b49f6/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.8.0.aar/febf0cfb707b8b879997f749c59efbaf/AndroidManifest.xml:4:5-43
@@ -291,24 +320,10 @@ MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] /U
 MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.8.0.aar/c87b85c20f0911423f48185f9dc8ee85/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/39ff28ba08b4161c271b2fc0023f7fca/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/39ff28ba08b4161c271b2fc0023f7fca/AndroidManifest.xml:4:5-43
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/a1f211399bb37ce4af45bd8cd0078409/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/a1f211399bb37ce4af45bd8cd0078409/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/ae3dbf8eb1df2e18915cb0b8044202b5/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/ae3dbf8eb1df2e18915cb0b8044202b5/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/4a11cab360316f67d6843543868f306a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/4a11cab360316f67d6843543868f306a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/6b74de9618241012aa232c4b2600374f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/6b74de9618241012aa232c4b2600374f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/35536bc1d79d2a35b9a223762e0a346b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/35536bc1d79d2a35b9a223762e0a346b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/5878fbf14d25bc253bf2af7f736caff3/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/5878fbf14d25bc253bf2af7f736caff3/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/bafc91bde281fe72f7e229278c55ca31/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/bafc91bde281fe72f7e229278c55ca31/AndroidManifest.xml:4:5-43
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/f33d9864d51e4acf348967525c53c7e0/AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/f33d9864d51e4acf348967525c53c7e0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/bafc91bde281fe72f7e229278c55ca31/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/bafc91bde281fe72f7e229278c55ca31/AndroidManifest.xml:4:5-43
 INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
 INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
@@ -374,7 +389,9 @@ ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/radibarq/.grad
 	android:name
 		ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/292d417f56716d6cb077fe9310290023/AndroidManifest.xml:32:25-75
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/AndroidManifest.xml:26:9-28:38
+ADDED from [com.android.support:cardview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/118114fdf1a1c69557f5a0d86d635b1d/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:transition:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/b7d55e87610bb0f3fcd21e41550ea91b/AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:support-v4:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/012d2f92d8322a11136ae7c007a6dc67/AndroidManifest.xml:26:9-28:38
@@ -384,9 +401,9 @@ MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/radibarq/.gradle
 MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-media-compat:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/AndroidManifest.xml:26:9-28:38
 	android:value
-		ADDED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/AndroidManifest.xml:28:13-35
+		ADDED from [com.android.support:cardview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/118114fdf1a1c69557f5a0d86d635b1d/AndroidManifest.xml:25:13-35
 	android:name
-		ADDED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/AndroidManifest.xml:27:13-51
+		ADDED from [com.android.support:cardview-v7:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/118114fdf1a1c69557f5a0d86d635b1d/AndroidManifest.xml:24:13-51
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/ea5dacbf7ffb152245e9e81635153a58/AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/66d6921b191973c911a7f9809c62b740/AndroidManifest.xml:24:5-79

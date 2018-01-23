@@ -35,8 +35,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.gayelak.gayelakandroid.WelcomeActivity"
-            android:theme="@style/AppThemeNoActionBar" >
-        </activity>
+            android:theme="@style/AppThemeNoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
@@ -57,17 +56,23 @@
             android:label="تصفح"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
 
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="com.gayelak.gayelakandroid.ProfileActivity"
+            android:theme="@style/AppThemeNoActionBarProfile" >
+        </activity>
+        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
