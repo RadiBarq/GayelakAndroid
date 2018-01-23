@@ -31,7 +31,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.gayelak.gayelakandroid.WelcomeActivity"
@@ -65,15 +64,18 @@
         </activity>
         <activity
             android:name="com.gayelak.gayelakandroid.ProfileActivity"
-            android:theme="@style/AppThemeNoActionBarProfile" >
-        </activity>
-        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsActivity" >
+            android:theme="@style/AppThemeNoActionBarProfile" />
+        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsActivity" />
+        <activity android:name="com.gayelak.gayelakandroid.BlockedUsersActivity" />
+        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeEmail" />
+        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeUserName" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.gayelak.gayelakandroid.ChangePasswordActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

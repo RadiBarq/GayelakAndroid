@@ -211,15 +211,27 @@ ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest
 	android:name
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:44:17-54
 activity#com.gayelak.gayelakandroid.ProfileActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:47:9-51:20
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:47:9-49:65
 	android:theme
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:49:13-62
 	android:name
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:48:13-44
 activity#com.gayelak.gayelakandroid.ProfileSettingsActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:52:9-60:20
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:50:9-61
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:52:19-58
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:50:19-58
+activity#com.gayelak.gayelakandroid.BlockedUsersActivity
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:51:9-58
+	android:name
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:51:19-55
+activity#com.gayelak.gayelakandroid.ProfileSettingsChangeEmail
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:52:9-73
+	android:name
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:52:19-61
+activity#com.gayelak.gayelakandroid.ProfileSettingsChangeUserName
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:53:9-59:20
+	android:name
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:53:19-64
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:54:13-58:29
 action#android.intent.action.MAIN
@@ -230,6 +242,10 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:57:17-77
 	android:name
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:57:27-74
+activity#com.gayelak.gayelakandroid.ChangePasswordActivity
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:60:9-69
+	android:name
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:60:19-57
 uses-sdk
 INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml

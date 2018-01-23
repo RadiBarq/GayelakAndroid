@@ -65,9 +65,12 @@
         </activity>
         <activity
             android:name="com.gayelak.gayelakandroid.ProfileActivity"
-            android:theme="@style/AppThemeNoActionBarProfile" >
+            android:theme="@style/AppThemeNoActionBarProfile" />
+        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsActivity" />
+        <activity android:name="com.gayelak.gayelakandroid.BlockedUsersActivity" />
+        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeEmail" >
         </activity>
-        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsActivity" >
+        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeUserName" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

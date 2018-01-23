@@ -46,18 +46,18 @@
         </activity>
         <activity
             android:name=".ProfileActivity"
-            android:theme="@style/AppThemeNoActionBarProfile">
-
-        </activity>
-        <activity android:name=".ProfileSettingsActivity">
-
+            android:theme="@style/AppThemeNoActionBarProfile" />
+        <activity android:name=".ProfileSettingsActivity" />
+        <activity android:name=".BlockedUsersActivity" />
+        <activity android:name=".ProfileSettingsChangeEmail"></activity>
+        <activity android:name=".ProfileSettingsChangeUserName">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".ChangePasswordActivity"></activity>
     </application>
 
 </manifest>
