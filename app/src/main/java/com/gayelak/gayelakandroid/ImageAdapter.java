@@ -24,7 +24,6 @@ public class ImageAdapter extends BaseAdapter {
         mContext = c;
     }
 
-
     @Override
     public int getCount() {
         return mThumbIds.length;
@@ -58,14 +57,13 @@ public class ImageAdapter extends BaseAdapter {
             // imageView.setPadding(0, 20, 0, 20);
 
         } else {
+
             imageView = (ImageView) convertView;
         }
 
         Bitmap bitmap1 = BitmapFactory.decodeResource(mContext.getResources() ,mThumbIds[position]);
         Bitmap circularBitmap1 = ImageConverter.getRoundedCornerBitmap(bitmap1, 15);
         imageView.setImageBitmap(circularBitmap1);
-
-
         return imageView;
     }
 

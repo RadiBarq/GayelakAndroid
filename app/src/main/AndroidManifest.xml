@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -49,15 +51,28 @@
             android:theme="@style/AppThemeNoActionBarProfile" />
         <activity android:name=".ProfileSettingsActivity" />
         <activity android:name=".BlockedUsersActivity" />
-        <activity android:name=".ProfileSettingsChangeEmail"></activity>
-        <activity android:name=".ProfileSettingsChangeUserName">
+        <activity android:name=".ProfileSettingsChangeEmail" />
+        <activity android:name=".ProfileSettingsChangeUserName" />
+        <activity android:name=".ChangePasswordActivity" />
+        <activity android:name=".CategoriesActivity" />
+        <activity android:name=".NotificationsActivity" />
+        <activity
+            android:name=".BrowsingItemActivity"
+            android:theme="@style/AppThemeNoActionBarProfile" />
+        <activity
+            android:name=".BrowsingItemFullImageActivity"
+            android:theme="@style/AppThemeNoActionBarProfile" />
+        <activity android:name=".BrowsingSettingsActivity" />
+        <activity android:name=".ReportUserActivity" />
+        <activity android:name=".MessagesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChangePasswordActivity"></activity>
+        <activity android:name=".MakePhotoActivity" />
+        <activity android:name=".PostItemActivity"></activity>
     </application>
 
 </manifest>

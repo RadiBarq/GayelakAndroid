@@ -68,9 +68,21 @@
             android:theme="@style/AppThemeNoActionBarProfile" />
         <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsActivity" />
         <activity android:name="com.gayelak.gayelakandroid.BlockedUsersActivity" />
-        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeEmail" >
+        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeEmail" />
+        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeUserName" />
+        <activity android:name="com.gayelak.gayelakandroid.ChangePasswordActivity" />
+        <activity android:name="com.gayelak.gayelakandroid.CategoriesActivity" />
+        <activity android:name="com.gayelak.gayelakandroid.NotificationsActivity" />
+        <activity
+            android:name="com.gayelak.gayelakandroid.BrowsingItemActivity"
+            android:theme="@style/AppThemeNoActionBarProfile" />
+        <activity
+            android:name="com.gayelak.gayelakandroid.BrowsingItemFullImageActivity"
+            android:theme="@style/AppThemeNoActionBarProfile" />
+        <activity android:name="com.gayelak.gayelakandroid.BrowsingSettingsActivity" />
+        <activity android:name="com.gayelak.gayelakandroid.ReportUserActivity" >
         </activity>
-        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeUserName" >
+        <activity android:name="com.gayelak.gayelakandroid.MessagesActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

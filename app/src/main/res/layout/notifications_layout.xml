@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    >
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="27.5dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:id = "@+id/userImage"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/face_2" />
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/notificationText"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="5dp"
+        android:autoText="false"
+        android:text="تم حذف المنتج الخاص بك لعدم مطابقة الصورة للمواصفات الرجاء اعد المحاولة"
+        android:textAlignment="viewEnd"
+        android:textColor="#808080"
+        app:autoSizeMaxTextSize="14sp"
+        app:autoSizeMinTextSize="5sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toStartOf="@+id/cardView3"
+        app:layout_constraintStart_toEndOf="@+id/cardView1"
+        app:layout_constraintTop_toTopOf="@+id/cardView3" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView3">
+
+        <ImageView
+            android:id="@+id/itemImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/nike_shoes_2" />
+
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="0dp"
+        android:layout_height="14.5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="17dp"
+        android:text="٢٦/١٢/٢٠١٧"
+        android:textAlignment="viewEnd"
+        android:textColor="#808080"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/cardView3"
+        app:layout_constraintStart_toEndOf="@+id/cardView1"
+        app:layout_constraintTop_toBottomOf="@+id/notificationText" />
+
+
+</android.support.constraint.ConstraintLayout>

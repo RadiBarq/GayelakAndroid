@@ -1,4 +1,4 @@
-#Mon Jan 22 02:23:45 EET 2018
-base.0=/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/transforms/dexMerger/debug/30
+#Mon Jan 29 23:20:27 EET 2018
+base.0=/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/transforms/dexMerger/debug/11
 path.0=classes.dex
 renamed.0=classes.dex

@@ -29,6 +29,8 @@ public class BrowsingActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browsing);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -113,7 +115,6 @@ public class BrowsingActivity extends AppCompatActivity
 
     private void doMySearch(String query)
     {
-
 
         System.out.println(query);
 

@@ -6,7 +6,7 @@
     density="xxxhdpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1516712842716"
+    timestamp="1517352242998"
     token="8628275978370289972"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -29,7 +29,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1516711900612"
+        timestamp="1517351632467"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
@@ -70,34 +70,16 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1516712662800"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1517351961559"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
             location="/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1516712842716"
+        timestamp="1517352242998"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/radibarq/developer/GayelakAndroid/app/build/outputs/apk/debug/app-debug.apk"

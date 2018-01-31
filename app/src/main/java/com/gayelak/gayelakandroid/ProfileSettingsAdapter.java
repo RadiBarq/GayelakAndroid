@@ -5,6 +5,7 @@ import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,6 +33,8 @@ public class ProfileSettingsAdapter extends BaseAdapter {
 
     }
 
+
+
     @Override
     public int getCount() {
 
@@ -52,7 +55,6 @@ public class ProfileSettingsAdapter extends BaseAdapter {
         return position;
     }
 
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -65,6 +67,7 @@ public class ProfileSettingsAdapter extends BaseAdapter {
             textView.setText("الصورة الشخصية");
             ImageView imageView = (ImageView) view.findViewById(R.id.image);
             imageView.setImageResource(R.drawable.profile_picture);
+
 
         } else if (position == 1) {
 
@@ -101,7 +104,6 @@ public class ProfileSettingsAdapter extends BaseAdapter {
             ImageView imageView = (ImageView) view.findViewById(R.id.image);
             android.support.v7.widget.CardView cardView = (android.support.v7.widget.CardView) view.findViewById(R.id.cardView);
             cardView.setVisibility(View.GONE);
-
 
         } else {
 
