@@ -8,6 +8,10 @@
         android:minSdkVersion="15"
         android:targetSdkVersion="26" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -80,9 +84,16 @@
             android:name="com.gayelak.gayelakandroid.BrowsingItemFullImageActivity"
             android:theme="@style/AppThemeNoActionBarProfile" />
         <activity android:name="com.gayelak.gayelakandroid.BrowsingSettingsActivity" />
-        <activity android:name="com.gayelak.gayelakandroid.ReportUserActivity" >
-        </activity>
+        <activity android:name="com.gayelak.gayelakandroid.ReportUserActivity" />
         <activity android:name="com.gayelak.gayelakandroid.MessagesActivity" >
+        </activity>
+        <activity
+            android:name="com.gayelak.gayelakandroid.MakePhotoActivity"
+            android:theme="@style/AppThemeNoActionBarProfile" >
+        </activity>
+        <activity
+            android:name="com.gayelak.gayelakandroid.PostItemActivity"
+            android:theme="@style/AppThemePostItem" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

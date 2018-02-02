@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-78:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-78:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-78:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-78:12
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-84:12
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/69f5d56f9c0f59d6bfff596f2f0f349f/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-storage:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.8.0.aar/51964aa61369d12cae67052dd622e3eb/AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/223ebd2a6f669591eeb9f53526a28be9/AndroidManifest.xml:17:1-32:12
@@ -55,45 +55,43 @@ MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] /U
 MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/39ff28ba08b4161c271b2fc0023f7fca/AndroidManifest.xml:2:1-6:12
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/f33d9864d51e4acf348967525c53c7e0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/bafc91bde281fe72f7e229278c55ca31/AndroidManifest.xml:2:1-6:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-78:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-78:12
-INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-78:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-84:12
 	package
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-78:12
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-84:12
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-78:12
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:1-84:12
 		INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:2:11-69
+uses-feature#android.hardware.camera
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:5:5-6:35
+	android:required
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:6:9-32
+	android:name
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:5:19-57
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:6:5-71
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:9:5-71
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:6:22-68
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:9:22-68
 uses-permission#android.permission.READ_PROFILE
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:7:5-71
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:10:5-71
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:7:22-68
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:10:22-68
 uses-permission#android.permission.READ_CONTACTS
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:8:5-72
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:11:5-72
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:8:22-69
-uses-permission#android.permission.CAMERA
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:9:5-65
-	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:9:22-62
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:10:5-81
-	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:10:22-78
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:11:22-69
 application
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:12:5-76:19
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:13:5-82:19
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/69f5d56f9c0f59d6bfff596f2f0f349f/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/69f5d56f9c0f59d6bfff596f2f0f349f/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/223ebd2a6f669591eeb9f53526a28be9/AndroidManifest.xml:22:5-30:19
@@ -161,145 +159,149 @@ MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/radibarq/.g
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/bafc91bde281fe72f7e229278c55ca31/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/bafc91bde281fe72f7e229278c55ca31/AndroidManifest.xml:5:5-20
 	android:supportsRtl
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:17:9-35
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:18:9-35
 	android:label
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:15:9-41
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:16:9-41
 	android:roundIcon
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:16:9-54
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:17:9-54
 	android:icon
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:14:9-43
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:15:9-43
 	android:allowBackup
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:14:9-35
 	android:theme
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:18:9-40
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:19:9-40
 activity#com.gayelak.gayelakandroid.WelcomeActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:19:9-21:58
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:20:9-22:58
 	android:theme
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:21:13-55
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:22:13-55
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:20:13-44
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:21:13-44
 meta-data#preloaded_fonts
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:23:9-25:57
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:24:9-26:57
 	android:resource
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:25:13-54
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:26:13-54
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:24:13-43
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:25:13-43
 activity#com.gayelak.gayelakandroid.RegisterActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:27:9-30:58
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:28:9-31:58
 	android:label
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:29:13-60
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:30:13-60
 	android:theme
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:30:13-55
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:31:13-55
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:28:13-45
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:29:13-45
 activity#com.gayelak.gayelakandroid.LoginActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:31:9-33:58
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:32:9-34:58
 	android:theme
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:33:13-55
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:34:13-55
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:32:13-42
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:33:13-42
 activity#com.gayelak.gayelakandroid.ForgotPasswordActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:34:9-36:47
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:35:9-37:47
 	android:label
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:36:13-44
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:37:13-44
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:35:13-51
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:36:13-51
 activity#com.gayelak.gayelakandroid.BrowsingActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:37:9-48:20
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:38:9-49:20
 	android:label
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:39:13-33
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:40:13-33
 	android:theme
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:40:13-56
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:41:13-56
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:38:13-45
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:39:13-45
 intent-filter#android.intent.action.SEARCH
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:41:13-43:29
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:42:13-44:29
 action#android.intent.action.SEARCH
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:42:17-71
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:43:17-71
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:42:25-68
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:43:25-68
 meta-data#android.app.searchable
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:45:13-47:54
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:46:13-48:54
 	android:resource
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:47:17-51
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:48:17-51
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:46:17-54
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:47:17-54
 activity#com.gayelak.gayelakandroid.ProfileActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:49:9-51:65
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:50:9-52:65
 	android:theme
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:51:13-62
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:52:13-62
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:50:13-44
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:51:13-44
 activity#com.gayelak.gayelakandroid.ProfileSettingsActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:52:9-61
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:53:9-61
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:52:19-58
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:53:19-58
 activity#com.gayelak.gayelakandroid.BlockedUsersActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:53:9-58
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:54:9-58
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:53:19-55
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:54:19-55
 activity#com.gayelak.gayelakandroid.ProfileSettingsChangeEmail
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:54:9-64
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:55:9-64
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:54:19-61
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:55:19-61
 activity#com.gayelak.gayelakandroid.ProfileSettingsChangeUserName
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:55:9-67
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:56:9-67
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:55:19-64
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:56:19-64
 activity#com.gayelak.gayelakandroid.ChangePasswordActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:56:9-60
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:57:9-60
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:56:19-57
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:57:19-57
 activity#com.gayelak.gayelakandroid.CategoriesActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:57:9-56
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:58:9-56
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:57:19-53
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:58:19-53
 activity#com.gayelak.gayelakandroid.NotificationsActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:58:9-59
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:59:9-59
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:58:19-56
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:59:19-56
 activity#com.gayelak.gayelakandroid.BrowsingItemActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:59:9-61:65
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:60:9-62:65
 	android:theme
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:61:13-62
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:62:13-62
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:60:13-49
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:61:13-49
 activity#com.gayelak.gayelakandroid.BrowsingItemFullImageActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:62:9-64:65
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:63:9-65:65
 	android:theme
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:64:13-62
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:65:13-62
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:63:13-58
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:64:13-58
 activity#com.gayelak.gayelakandroid.BrowsingSettingsActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:65:9-62
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:66:9-62
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:65:19-59
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:66:19-59
 activity#com.gayelak.gayelakandroid.ReportUserActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:66:9-56
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:67:9-56
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:66:19-53
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:67:19-53
 activity#com.gayelak.gayelakandroid.MessagesActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:67:9-73:20
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:68:9-70:20
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:67:19-51
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:68:13-72:29
-action#android.intent.action.MAIN
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:69:17-69
-	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:69:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:71:17-77
-	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:71:27-74
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:68:19-51
 activity#com.gayelak.gayelakandroid.MakePhotoActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:74:9-55
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:71:9-74:20
+	android:theme
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:72:13-62
 	android:name
-		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:74:19-52
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:71:19-52
 activity#com.gayelak.gayelakandroid.PostItemActivity
-ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:75:9-63
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:75:9-81:20
+	android:theme
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:76:13-52
 	android:name
 		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:75:19-51
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:77:13-80:29
+action#android.intent.action.MAIN
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:78:17-69
+	android:name
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:78:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:79:17-77
+	android:name
+		ADDED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml:79:27-74
 uses-sdk
 INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/radibarq/developer/GayelakAndroid/app/src/main/AndroidManifest.xml
