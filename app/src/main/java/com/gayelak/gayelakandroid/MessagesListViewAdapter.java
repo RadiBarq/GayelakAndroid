@@ -20,7 +20,6 @@ public class MessagesListViewAdapter extends BaseAdapter {
     double screenHeight;
 
 
-
     MessagesListViewAdapter(Context context, double screenHeight)
     {
 

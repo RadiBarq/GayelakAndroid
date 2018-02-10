@@ -65,4 +65,5 @@ public class BrowsingSettingsActivity extends AppCompatActivity {
         });
 
     }
+
 }

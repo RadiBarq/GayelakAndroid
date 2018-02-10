@@ -27,6 +27,7 @@ public class ReportUserGridViewAdapter extends BaseAdapter {
     {
         mContext = c;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
     }
     
     @Override

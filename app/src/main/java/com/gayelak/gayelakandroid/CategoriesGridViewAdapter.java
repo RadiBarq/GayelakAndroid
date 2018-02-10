@@ -9,8 +9,6 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 /**
  * Created by radibarq on 1/23/18.
  */
@@ -50,7 +48,7 @@ public class CategoriesGridViewAdapter extends BaseAdapter {
         View view;
         view = mInflater.inflate(R.layout.browsing_category_layout, parent, false);
         view.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 600));
-        TextView textView = (TextView) view.findViewById(R.id.text);
+        TextView textView = (TextView) view.findViewById(R.id.email);
         ImageView imageView = (ImageView) view.findViewById(R.id.image);
         textView.setText(textArray[position]);
         imageView.setImageResource(imagesArray[position]);

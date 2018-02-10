@@ -27,6 +27,8 @@ public class MakePhotoActivity extends AppCompatActivity {
     }
 
 
+
+
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
@@ -40,7 +42,9 @@ public class MakePhotoActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            imageView.setImageBitmap(imageBitmap);
+            PostItemActivity.postedItemImages[PostItemActivity.clickedItem] = imageBitmap;
+            onBackPressed();
+
         }
     }
 

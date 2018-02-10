@@ -13,7 +13,6 @@ import android.widget.GridView;
 
 public class NotificationsAdapter extends BaseAdapter{
 
-
     Context context;
     LayoutInflater layoutInflater;
 

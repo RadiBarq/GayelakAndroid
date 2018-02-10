@@ -15,9 +15,9 @@
         android:layout_marginTop="8dp"
         android:elevation="0dp"
         app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/text"
+        app:layout_constraintBottom_toBottomOf="@+id/email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text">
+        app:layout_constraintTop_toTopOf="@+id/email">
 
 
         <ImageView
@@ -34,7 +34,7 @@
 
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"

@@ -19,6 +19,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:alpha="0.8"
+        android:background="@drawable/progress_animation_bg_rounded_corners"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_fileName="animation-w500-h500.json" />
+
+
     <EditText
         android:id="@+id/title"
         android:layout_width="0dp"
@@ -85,6 +100,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="8dp"
+        android:checkedButton="@+id/radio_local"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/price"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +119,7 @@
             android:id="@+id/radio_dollar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="dollar"
+            android:text="$"
             android:textColor="#999999"
             android:textSize="18sp" />
     </RadioGroup>
@@ -121,6 +137,7 @@
         android:text="نشر المنتج"
         android:textColor="#ffffff"
         android:textSize="18sp"
+        android:onClick="onClickPost"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
