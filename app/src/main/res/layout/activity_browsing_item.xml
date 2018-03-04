@@ -18,6 +18,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loadingAnimationView"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:alpha="0.8"
+        android:background="@drawable/progress_animation_bg_rounded_corners"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_fileName="animation-w500-h500.json"
+        />
+
     <android.support.v7.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="60dp"
@@ -29,20 +43,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewPager">
 
-
         <ImageView
             android:id="@+id/profileImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:onClick="onClickProfileImage"
             app:srcCompat="@drawable/profile_picture" />
-
-
-
     </android.support.v7.widget.CardView>
 
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/contactButton"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="55dp"
@@ -52,7 +64,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="onClickContact"
+        />
 
     <TextView
         android:id="@+id/price"
@@ -61,6 +75,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:text="$400"
+        android:textAlignment="viewStart"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView2" />
@@ -79,7 +94,7 @@
     <TextView
         android:id="@+id/title"
         android:layout_width="0dp"
-        android:layout_height="17dp"
+        android:layout_height="25dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="20dp"
         android:text="TextView"
@@ -90,7 +105,7 @@
         app:layout_constraintTop_toBottomOf="@+id/distance" />
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/descriptionEditText"
         android:layout_width="0dp"
         android:layout_height="102dp"
         android:layout_marginBottom="8dp"
@@ -101,7 +116,7 @@
         android:text="Teaching Alexander the Great gave Aristotle many opportunities and an abundance of supplies. He established a library in the Lyceum which aided in the production of many of his hundreds of books, which were written on papyrus scrolls.[8] The fact that Aristotle was a pupil of Plato contributed to his former views of Platonism, but, following Plato's death, Aristotle immersed himself in empirical studies and shifted from Platonism to empiricism.[9] He believed all peoples' concepts and all of their knowledge was ultimately based on perception. Aristotle's views on natural sciences represent the groundwork underlying many of his works."
         android:textAlignment="center"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/contactButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -119,7 +134,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cardView2"
-        app:lottie_fileName="animation-w75-h75.json" />
-
-
+        app:lottie_fileName="animation-w75-h75.json"
+        android:onClick="onClickAnimation"
+        />
 </android.support.constraint.ConstraintLayout>

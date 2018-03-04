@@ -58,8 +58,7 @@ class BrowsingImageAdapter extends BaseAdapter {
 
         View view;
         view = mInflater.inflate(R.layout.layout_browsing_image_adapter,parent,false);
-        view.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT,  (int) (screenHeight/4 + 40)));
-
+        view.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT,  (int) (screenHeight/3.5)));
         ImageView imageView = view.findViewById(R.id.imageView);
         StorageReference imageStorageRef = FirebaseStorage.getInstance().getReference().child("Items_Photos").child(itemsKeys.get(position)).child("1.jpeg");
         Glide.with(mContext)
@@ -67,6 +66,7 @@ class BrowsingImageAdapter extends BaseAdapter {
                 .load(imageStorageRef).animate(android.R.anim.fade_in).thumbnail(Glide.with(mContext).load(R.drawable.spinner_gif)).crossFade()
                 .into(imageView);
         return  view;
+
     }
 
 }

@@ -5,11 +5,19 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.TypedValue;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.ArrayList;
 
 /**
  * Created by radibarq on 1/22/18.
@@ -18,15 +26,25 @@ import android.widget.ImageView;
 public class SellingImageAdapter extends BaseAdapter {
 
     private Context mContext;
+    private LayoutInflater mInflater;
+    double screenWidth;
+    private ArrayList<String> itemsKeys;
+    double screenHeight;
 
-    public SellingImageAdapter(Context c)
+
+    public SellingImageAdapter(Context c, double screenHeight, double screenWidth, ArrayList<String> itemsKeys)
     {
         mContext = c;
+        mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.screenHeight = screenHeight;
+        this.screenWidth = screenWidth;
+        this.itemsKeys = itemsKeys;
     }
 
     @Override
     public int getCount() {
-        return mThumbIds.length;
+
+        return itemsKeys.size();
     }
 
     @Override
@@ -41,47 +59,17 @@ public class SellingImageAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
-        if (convertView == null) {
-            // if it's not recycled, initialize some attributes
 
-            //maybe you should do this calculation not exactly in this method but put is somewhere else.
-            Resources r = Resources.getSystem();
-            float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 165, r.getDisplayMetrics());
+        View view;
+        view = mInflater.inflate(R.layout.layout_browsing_image_adapter,parent,false);
+        view.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT,  (int) (screenHeight/3.5)));
+        ImageView imageView = view.findViewById(R.id.imageView);
+        StorageReference imageStorageRef = FirebaseStorage.getInstance().getReference().child("Items_Photos").child(itemsKeys.get(position)).child("1.jpeg");
+        Glide.with(mContext)
+                .using(new FirebaseImageLoader())
+                .load(imageStorageRef).animate(android.R.anim.fade_in).thumbnail(Glide.with(mContext).load(R.drawable.spinner_gif)).crossFade()
+                .into(imageView);
+        return view;
 
-
-            imageView = new ImageView(mContext);
-
-            imageView.setLayoutParams(new GridView.LayoutParams((int) px , (int) px));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            // imageView.setPadding(0, 20, 0, 20);
-
-        } else {
-            imageView = (ImageView) convertView;
-        }
-
-        Bitmap bitmap1 = BitmapFactory.decodeResource(mContext.getResources() ,mThumbIds[position]);
-        Bitmap circularBitmap1 = ImageConverter.getRoundedCornerBitmap(bitmap1, 15);
-        imageView.setImageBitmap(circularBitmap1);
-
-
-        return imageView;
     }
-
-
-    private Integer[] mThumbIds = {
-
-            R.drawable.nike_shoes_2, R.drawable.nike_shoes_2,
-            R.drawable.nike_shoes_2, R.drawable.nike_shoes_2,
-            R.drawable.nike_shoes_2,  R.drawable.nike_shoes_2,
-            R.drawable.nike_shoes_2,  R.drawable.nike_shoes_2,
-            R.drawable.nike_shoes_2,  R.drawable.nike_shoes_2,
-            R.drawable.nike_shoes_2,  R.drawable.nike_shoes_2,
-            R.drawable.nike_shoes_2,  R.drawable.nike_shoes_2,
-            R.drawable.nike_shoes_2, R.drawable.nike_shoes_2,
-            R.drawable.nike_shoes_2,  R.drawable.nike_shoes_2,
-            R.drawable.nike_shoes_2,  R.drawable.nike_shoes_2,
-            R.drawable.nike_shoes_2,  R.drawable.nike_shoes_2
-    };
-
 }

@@ -43,7 +43,12 @@ dependencies {
     compile "com.google.android.gms:play-services-location:11.8.0"
     // FirebaseUI Storage only
     compile 'com.firebaseui:firebase-ui-storage:0.6.0'
+    compile 'com.github.arimorty:floatingsearchview:2.1.1'
+
+
 }
+
+
 
 
 

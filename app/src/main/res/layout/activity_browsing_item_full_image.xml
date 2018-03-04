@@ -15,6 +15,12 @@
         app:progressBarAutoRotateInterval="1000"
         app:progressBarImageScaleType="centerInside"/>
 
-
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickCloseImage"
+        app:srcCompat="@drawable/cancel" />
 
 </FrameLayout>

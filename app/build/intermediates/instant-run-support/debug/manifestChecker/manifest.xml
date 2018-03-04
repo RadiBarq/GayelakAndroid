@@ -79,13 +79,30 @@
             android:name="com.gayelak.gayelakandroid.ProfileActivity"
             android:label="بيع منتجاتك"
             android:theme="@style/AppThemeNoActionBarProfile" />
-        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsActivity" />
-        <activity android:name="com.gayelak.gayelakandroid.BlockedUsersActivity" />
-        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeEmail" />
-        <activity android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeUserName" />
-        <activity android:name="com.gayelak.gayelakandroid.ChangePasswordActivity" />
-        <activity android:name="com.gayelak.gayelakandroid.CategoriesActivity" />
-        <activity android:name="com.gayelak.gayelakandroid.NotificationsActivity" />
+        <activity
+            android:name="com.gayelak.gayelakandroid.ProfileSettingsActivity"
+            android:label="الاعدادات" />
+        <activity
+            android:name="com.gayelak.gayelakandroid.BlockedUsersActivity"
+            android:label="قائمة المحذورين" >
+        </activity>
+        <activity
+            android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeEmail"
+            android:label="تغير البريد الالكتروني" />
+        <activity
+            android:name="com.gayelak.gayelakandroid.ProfileSettingsChangeUserName"
+            android:label="تغير اسم المستخدم" >
+        </activity>
+        <activity
+            android:name="com.gayelak.gayelakandroid.ChangePasswordActivity"
+            android:label="تغير كلمة السر" >
+        </activity>
+        <activity
+            android:name="com.gayelak.gayelakandroid.CategoriesActivity"
+            android:label="التصنيفات" />
+        <activity
+            android:name="com.gayelak.gayelakandroid.NotificationsActivity"
+            android:label="الاشعارات" />
         <activity
             android:name="com.gayelak.gayelakandroid.BrowsingItemActivity"
             android:theme="@style/AppThemeNoActionBarProfile" />
@@ -93,17 +110,20 @@
             android:name="com.gayelak.gayelakandroid.BrowsingItemFullImageActivity"
             android:theme="@style/AppThemeNoActionBarProfile" />
         <activity android:name="com.gayelak.gayelakandroid.BrowsingSettingsActivity" />
-        <activity android:name="com.gayelak.gayelakandroid.ReportUserActivity" />
-        <activity android:name="com.gayelak.gayelakandroid.MessagesActivity" >
+        <activity
+            android:name="com.gayelak.gayelakandroid.ReportUserActivity"
+            android:label="التبليغ عن مستخدم" >
         </activity>
+        <activity
+            android:name="com.gayelak.gayelakandroid.MessagesActivity"
+            android:label="الرسائل" />
         <activity
             android:name="com.gayelak.gayelakandroid.MakePhotoActivity"
-            android:theme="@style/AppThemeNoActionBarProfile" >
-        </activity>
+            android:theme="@style/AppThemeNoActionBarProfile" />
         <activity
             android:name="com.gayelak.gayelakandroid.PostItemActivity"
-            android:theme="@style/AppThemePostItem" >
-        </activity>
+            android:theme="@style/AppThemePostItem" />
+        <activity android:name="com.gayelak.gayelakandroid.ChatActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

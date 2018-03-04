@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gayelak.gayelakandroid.BrowsingSettingsActivity">
+    tools:context="com.gayelak.gayelakandroid.BrowsingSettingsActivity"
+    android:background="#ffffff"
+    >
 
     <ListView
         android:id="@+id/listVIew"

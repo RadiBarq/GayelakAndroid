@@ -47,13 +47,13 @@
         android:maxLength="40"
         android:textAlignment="viewEnd"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewPager" />
 
     <EditText
-        android:id="@+id/description"
+        android:id="@+id/descriptionEditText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
@@ -91,7 +91,7 @@
         app:layout_constraintBottom_toTopOf="@+id/post_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/radio_group"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionEditText" />
 
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"

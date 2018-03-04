@@ -2,6 +2,7 @@ package com.gayelak.gayelakandroid;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 public class BlockedUsersActivity extends AppCompatActivity {
@@ -18,5 +19,21 @@ public class BlockedUsersActivity extends AppCompatActivity {
         blockedListView.setAdapter(profileBlcokedUsersAdapter);
 
 
+        if (getSupportActionBar() != null) {
+
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }

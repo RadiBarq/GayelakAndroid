@@ -24,7 +24,6 @@
         app:headerLayout="@layout/nav_header_browsing"
         app:menu="@menu/activity_browsing_drawer"
         app:itemBackground="@drawable/browsing_nav_selected_item_background"
-
         />
 
 </android.support.v4.widget.DrawerLayout>

@@ -7,22 +7,26 @@
     android:background="#ffffff"
     tools:context="com.gayelak.gayelakandroid.ProfileSettingsChangeUserName">
 
-
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/passwordText"
         android:layout_width="320dp"
         android:layout_height="43dp"
         android:layout_marginTop="30dp"
         android:ems="10"
+        android:hint="اسم المستخدم الجديد"
         android:inputType="textPersonName"
+        android:singleLine="true"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:maxLength="20"
+        />
 
     <Button
         android:id="@+id/button4"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="320dp"
         android:layout_height="58dp"
         android:layout_marginTop="50dp"
@@ -31,10 +35,25 @@
         android:text="حفظ"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="18sp"
+        android:onClick="onClickChangeUserName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordText"
+        />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loadingAnimationView"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:alpha="0.8"
+        android:background="@drawable/progress_animation_bg_rounded_corners"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_fileName="animation-w500-h500.json"
+        />
 
 </android.support.constraint.ConstraintLayout>

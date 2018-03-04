@@ -22,21 +22,21 @@ public class ReportUserGridViewAdapter extends BaseAdapter {
 
     private Context mContext;
     private LayoutInflater mInflater;
+    public static int selectedItem;
 
     public ReportUserGridViewAdapter(Context c)
     {
         mContext = c;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
+        selectedItem = -1; // no item selected in this case...
     }
-    
+
     @Override
     public int getCount() {
 
         return imagesArray.length;
 
     }
-
     @Override
     public Object getItem(int position) {
         return null;
@@ -56,19 +56,23 @@ public class ReportUserGridViewAdapter extends BaseAdapter {
         ImageView imageView = view.findViewById(R.id.imageView);
         imageView.setImageResource(imagesArray[position]);
         TextView textView = (TextView) view.findViewById(R.id.textView);
+        android.support.v7.widget.CardView cardView = (android.support.v7.widget.CardView) view.findViewById(R.id.cardView);
+        cardView.setVisibility(View.GONE);
+
+        if (selectedItem == position)
+        {
+            cardView.setVisibility(View.VISIBLE);
+        }
+
         textView.setText(textsArray[position]);
         return view;
     }
-
 
     private int[] imagesArray = {
 
             R.drawable.chat, R.drawable.thief, R.drawable.volcano, R.drawable.suspects, R.drawable.zombie,
             R.drawable.syringe, R.drawable.spam, R.drawable.dislike, R.drawable.mailbox
-
     };
-
-
 
     private String[] textsArray = {
 

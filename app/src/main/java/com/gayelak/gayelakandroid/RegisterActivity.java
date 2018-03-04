@@ -68,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        mEmailView = (AutoCompleteTextView) findViewById(R.id.userName);
        // populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -91,7 +91,7 @@ public class RegisterActivity extends AppCompatActivity{
             }
         });
 
-        mUserNameView = (EditText) findViewById(R.id.userName);
+        mUserNameView = (EditText) findViewById(R.id.passwordText);
         animationView = (LottieAnimationView) findViewById(R.id.lottieAnimationView);
         animationView.setVisibility(View.GONE);
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -235,7 +235,7 @@ public class RegisterActivity extends AppCompatActivity{
 
         Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.profile_picture);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
         byte[] data = baos.toByteArray();
 
         UploadTask uploadTask = storageRef.putBytes(data);

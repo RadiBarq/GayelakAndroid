@@ -33,10 +33,10 @@
         android:text="دخول فيسبوك"
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="@id/email"
+        app:layout_constraintLeft_toLeftOf="@id/userName"
 
-        app:layout_constraintRight_toRightOf="@id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintRight_toRightOf="@id/userName"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
 
     <Button
         android:id="@+id/loginButton"
@@ -51,12 +51,12 @@
         android:text="تسجيل الخول"
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="@id/email"
-        app:layout_constraintRight_toRightOf="@id/email"
+        app:layout_constraintLeft_toLeftOf="@id/userName"
+        app:layout_constraintRight_toRightOf="@id/userName"
         app:layout_constraintTop_toBottomOf="@+id/facebookButton" />
 
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/userName"
         android:layout_width="200dp"
         android:layout_height="63dp"
         android:layout_marginEnd="5dp"
@@ -78,8 +78,8 @@
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textSize="48sp"
-        app:layout_constraintLeft_toLeftOf="@id/email"
-        app:layout_constraintRight_toRightOf="@id/email"
+        app:layout_constraintLeft_toLeftOf="@id/userName"
+        app:layout_constraintRight_toRightOf="@id/userName"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -92,8 +92,8 @@
         android:text="التسجيل"
         android:textColor="@android:color/background_light"
         android:textSize="21sp"
-        app:layout_constraintLeft_toLeftOf="@id/email"
-        app:layout_constraintRight_toRightOf="@id/email"
+        app:layout_constraintLeft_toLeftOf="@id/userName"
+        app:layout_constraintRight_toRightOf="@id/userName"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
 
 

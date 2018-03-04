@@ -13,6 +13,8 @@ import com.facebook.drawee.backends.pipeline.PipelineDraweeControllerBuilder;
 import com.facebook.drawee.controller.BaseControllerListener;
 import com.facebook.imagepipeline.image.ImageInfo;
 
+import java.util.ArrayList;
+
 import me.relex.photodraweeview.OnPhotoTapListener;
 import me.relex.photodraweeview.PhotoDraweeView;
 
@@ -30,13 +32,19 @@ public class BrowsingItemFullImageActivity extends AppCompatActivity {
 
           final PhotoDraweeView mPhotoDraweeView = (PhotoDraweeView) findViewById(R.id.photo_drawee_view);
 
-             mPhotoDraweeView.setPhotoUri(Uri.parse("res:///" + R.drawable.nike_shoes));
+             mPhotoDraweeView.setPhotoUri(ItemViewPagerAdapter.imagesUri.get(ItemViewPagerAdapter.selectedImageIndex));
             mPhotoDraweeView.setOnPhotoTapListener(new OnPhotoTapListener() {
             @Override public void onPhotoTap(View view, float x, float y) {
                 Toast.makeText(view.getContext(), "onPhotoTap :  x =  " + x + ";" + " y = " + y,
                         Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void onClickCloseImage(View view)
+    {
+        finish();
 
     }
+
 }

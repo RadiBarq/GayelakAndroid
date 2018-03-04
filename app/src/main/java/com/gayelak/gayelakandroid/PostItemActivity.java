@@ -1,10 +1,8 @@
 package com.gayelak.gayelakandroid;
 
-import android.*;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -13,16 +11,12 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -44,13 +38,10 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.airbnb.lottie.LottieAnimationView;
-
 import java.io.ByteArrayOutputStream;
-import java.io.Console;
 import java.io.IOException;
 import java.util.Currency;
 import java.util.Locale;
-
 
 public class PostItemActivity extends AppCompatActivity {
 
@@ -83,7 +74,7 @@ public class PostItemActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPagerPostItemAdapter = new ViewPagerPostItemAdapter(this);
         viewPager.setAdapter(viewPagerPostItemAdapter);
-        descriptionEditText = (EditText) findViewById(R.id.description);
+        descriptionEditText = (EditText) findViewById(R.id.descriptionEditText);
         titleEditText = (EditText) findViewById(R.id.title);
         priceEditText = (EditText) findViewById(R.id.price);
         radioGroup = (RadioGroup) findViewById(R.id.radio_group);
@@ -96,7 +87,6 @@ public class PostItemActivity extends AppCompatActivity {
         localeRadioButton = (RadioButton) findViewById(R.id.radio_local);
         localeRadioButton.setText(currencyCode);
         getCurrentLocation();
-
         animationView = (LottieAnimationView) findViewById(R.id.lottieAnimationView);
         animationView.setVisibility(View.GONE);
 
@@ -109,7 +99,6 @@ public class PostItemActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
 
             }
 
@@ -129,12 +118,12 @@ public class PostItemActivity extends AppCompatActivity {
 
         // add back arrow to toolbar
         if (getSupportActionBar() != null){
+
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
       setTitle("بيع منتجاتك");
-
     }
 
     // this will be called from the adapter my lord.
@@ -176,7 +165,6 @@ public class PostItemActivity extends AppCompatActivity {
             }
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // handle arrow click here
@@ -188,6 +176,7 @@ public class PostItemActivity extends AppCompatActivity {
     }
     @SuppressLint("MissingPermission")
     public void onClickPost(View view) {
+
         String descirption = descriptionEditText.getText().toString();
         String title = titleEditText.getText().toString();
         String price = priceEditText.getText().toString();
@@ -227,11 +216,9 @@ public class PostItemActivity extends AppCompatActivity {
             }
 
             playAnimation();
-
             uploadItem(descirption, title, price, imagesCount, favourites, timestamp, userId, category, displayName, currency);
             //uploadPictures();
         }
-
     }
 
     private void playAnimation()
@@ -289,11 +276,8 @@ public class PostItemActivity extends AppCompatActivity {
                 });
 
                 counter++;
-
             }
-
         }
-
         uploadGeoLocationData(itemId, currentLocation);
     }
 
@@ -315,12 +299,8 @@ public class PostItemActivity extends AppCompatActivity {
                 }
             }
         });
-
-
         //uploadGeoLocationData(itemKey, currentLocation);
-
     }
-
 
     private void getCurrentLocation() {
 
@@ -338,8 +318,6 @@ public class PostItemActivity extends AppCompatActivity {
                     1);
             return;
         }
-
-
 
         mFusedLocationClient.getLastLocation()
                 .addOnSuccessListener(this, new OnSuccessListener<Location>() {
@@ -376,7 +354,6 @@ public class PostItemActivity extends AppCompatActivity {
         }
     }
 
-
     private int getNumberOfImages() {
         int counter = 0;
 
@@ -390,6 +367,7 @@ public class PostItemActivity extends AppCompatActivity {
 
         return counter;
     }
+
 
     private void uploadGeoLocationData(final String itemId, Location itemLocation) {
 
@@ -408,15 +386,16 @@ public class PostItemActivity extends AppCompatActivity {
 
                 else
                 {
-                  postingSuccessful();
+                  postingSuccessful(itemId);
                 }
             }
         });
     }
 
-    private void postingSuccessful()
+    private void postingSuccessful(String itemId)
     {
         stopAnimation();
+        FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("items").child(itemId).setValue("");
         Toast.makeText(PostItemActivity.this, "posting items works", Toast.LENGTH_SHORT).show();
     }
 }

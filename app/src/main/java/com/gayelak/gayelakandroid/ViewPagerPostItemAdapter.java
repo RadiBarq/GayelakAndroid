@@ -69,7 +69,6 @@ public class ViewPagerPostItemAdapter extends PagerAdapter {
                 else
                 {
                     items = new CharSequence[] {"الكاميرة", "مكتبة الصور"};
-
                 }
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
@@ -102,7 +101,7 @@ public class ViewPagerPostItemAdapter extends PagerAdapter {
                             }
                         });
 
-                builder.setNegativeButton("Cancel", null);
+                builder.setNegativeButton("اغلاق", null);
                 builder.show();
             }
         });
@@ -129,6 +128,8 @@ public class ViewPagerPostItemAdapter extends PagerAdapter {
 
     @Override
     public float getPageWidth(int position) {
+
         return 0.25f;
+
     }
 }

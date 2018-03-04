@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/userName"
         android:layout_width="250dp"
         android:layout_height="22dp"
         android:layout_marginBottom="8dp"
@@ -20,12 +20,12 @@
         android:textAlignment="viewEnd"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="@+id/blockButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        app:layout_constraintTop_toTopOf="@+id/blockButton" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/blockButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
