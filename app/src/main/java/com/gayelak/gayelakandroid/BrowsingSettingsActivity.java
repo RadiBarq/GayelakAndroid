@@ -9,14 +9,21 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class BrowsingSettingsActivity extends AppCompatActivity {
 
     ListView listView;
     // selected items static...
-    public static int[] categoriesSettings = {1, 0, 0, 0, 0, 0, 0, 0, 0, 1};
-    public static int destanceSettignsIndex = 3;
-    public static int sortedSeettigsIndex = 0;
+    public static int[] categoriesSettings = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    public static int distanceSettingsIndex = 3;
+    public static int sortedSettingsIndex = 0;
 
+    int[] copyCategoriesSettings = {};
+    int copyDistanceSettingsIndex;
+    int copySortedSettingsIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +32,9 @@ public class BrowsingSettingsActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listVIew);
         final BrowsingSettingsAdapter browsingSettingsAdapter = new BrowsingSettingsAdapter(this);
         listView.setAdapter(browsingSettingsAdapter);
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -48,14 +55,13 @@ public class BrowsingSettingsActivity extends AppCompatActivity {
 
                         }
 
-
                     } else if (position >= 12 && position <= 15) {
 
-                        BrowsingSettingsActivity.destanceSettignsIndex = position - 12;
+                        BrowsingSettingsActivity.distanceSettingsIndex = position - 12;
 
                     } else {
 
-                        BrowsingSettingsActivity.sortedSeettigsIndex = position - 17;
+                        BrowsingSettingsActivity.sortedSettingsIndex= position - 17;
                     }
 
                     browsingSettingsAdapter.notifyDataSetChanged();
@@ -63,7 +69,18 @@ public class BrowsingSettingsActivity extends AppCompatActivity {
             }
 
         });
+        copyCategoriesSettings = Arrays.copyOf(categoriesSettings, categoriesSettings.length);
+        copyDistanceSettingsIndex = distanceSettingsIndex;
+        copySortedSettingsIndex = sortedSettingsIndex;
+    }
+    @Override
+    protected void onPause() {
+
+        super.onPause();
+        if (copyDistanceSettingsIndex != distanceSettingsIndex || copySortedSettingsIndex != sortedSettingsIndex ||   !Arrays.equals(copyCategoriesSettings,categoriesSettings))
+        {
+           BrowsingFragment.queryChanged = true;
+        }
 
     }
-
 }

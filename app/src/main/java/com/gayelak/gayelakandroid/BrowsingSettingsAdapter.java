@@ -81,7 +81,7 @@ public class BrowsingSettingsAdapter extends BaseAdapter {
             else if (position >= 12 && position <= 15)
             {
 
-                if (position - 12 == BrowsingSettingsActivity.destanceSettignsIndex)
+                if (position - 12 == BrowsingSettingsActivity.distanceSettingsIndex)
                 {
                     imageView.setVisibility(View.VISIBLE);
                 }
@@ -90,7 +90,7 @@ public class BrowsingSettingsAdapter extends BaseAdapter {
 
             else
             {
-                if (position - 17 == BrowsingSettingsActivity.sortedSeettigsIndex)
+                if (position - 17 == BrowsingSettingsActivity.sortedSettingsIndex)
                 {
                     imageView.setVisibility(View.VISIBLE);
                 }

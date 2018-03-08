@@ -232,7 +232,6 @@ public class PostItemActivity extends AppCompatActivity {
 
     private void stopAnimation()
     {
-
         // If something goes wrong.
         animationView.cancelAnimation();
         animationView.setVisibility(View.GONE);
@@ -368,13 +367,13 @@ public class PostItemActivity extends AppCompatActivity {
         return counter;
     }
 
-
     private void uploadGeoLocationData(final String itemId, Location itemLocation) {
 
         DatabaseReference geoLocationDatabaseRef = FirebaseDatabase.getInstance().getReference().child("items-location");
         GeoFire geoFire = new GeoFire(geoLocationDatabaseRef);
 
-        geoFire.setLocation(itemId, new GeoLocation(itemLocation.getLatitude(), itemLocation.getLongitude()), new GeoFire.CompletionListener() {
+        // here should be itemLocation.getLatitude(), itemLocation.getLongitude() instead of these static data my lordy lord
+        geoFire.setLocation(itemId, new GeoLocation(37.785834, -122.406417), new GeoFire.CompletionListener() {
             @Override
             public void onComplete(String key, DatabaseError error) {
 
@@ -398,4 +397,5 @@ public class PostItemActivity extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("items").child(itemId).setValue("");
         Toast.makeText(PostItemActivity.this, "posting items works", Toast.LENGTH_SHORT).show();
     }
+
 }

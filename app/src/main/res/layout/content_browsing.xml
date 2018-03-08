@@ -10,7 +10,7 @@
     tools:showIn="@layout/app_bar_browsing">
 
     <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/gridview"
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="0dp"
@@ -26,6 +26,8 @@
         android:layout_height="60dp"
         android:background="@color/colorPrimary"
         android:backgroundTint="@color/colorPrimary"
+        app:floatingSearch_actionMenuOverflowColor = "@color/colorPrimary"
+        app:floatingSearch_hintTextColor = "#AFAFAF"
         app:floatingSearch_backgroundColor="#ffffff"
         app:floatingSearch_close_search_on_keyboard_dismiss="true"
         app:floatingSearch_leftActionMode="showHamburger"
@@ -40,10 +42,11 @@
         android:id="@+id/tabLayout"
         android:layout_width="0dp"
         android:layout_height="46dp"
+        android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/floating_search_view"
-        android:elevation="10dp"
+
         >
 
         <android.support.design.widget.TabItem

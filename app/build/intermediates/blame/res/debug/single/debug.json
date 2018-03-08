@@ -28,6 +28,10 @@
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi_home_browsing.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xhdpi/home_browsing.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/layout_content_browsing.xml.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/layout/content_browsing.xml"
     },
@@ -98,6 +102,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable_reset_button_bg_rounded_corners.xml.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable/reset_button_bg_rounded_corners.xml"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_notifications_none_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/ic_notifications_none_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
@@ -300,6 +308,10 @@
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/floatingsearchview-2.1.1.aar/56776a3c6b36ab09fd9177e8c0ea8c5a/res/drawable-mdpi-v4/ic_history_black_24dp.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_chat_bubble_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/ic_chat_bubble_white_48dp.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi_thief.png.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xhdpi/thief.png"
     },
@@ -316,16 +328,16 @@
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
-        "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xxhdpi-v4/abc_text_select_handle_right_mtrl_light.png"
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
+        "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable_welcome_background.jpeg.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable/welcome_background.jpeg"
     },
     {
-        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
-        "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
+        "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xxhdpi-v4/abc_text_select_handle_right_mtrl_light.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -452,6 +464,10 @@
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_36dp.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_notifications_none_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/ic_notifications_none_white_48dp.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable_abc_ic_voice_search_api_material.xml.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable/abc_ic_voice_search_api_material.xml"
     },
@@ -466,6 +482,14 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/layout_abc_alert_dialog_title_material.xml.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/layout/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_chat_bubble_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/ic_chat_bubble_white_48dp.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_chat_bubble_outline_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xhdpi/ic_chat_bubble_outline_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_face_1.jpg.flat",
@@ -492,12 +516,20 @@
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/3e994a226f438b2833c2e4fb4db2690b/res/drawable-xhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_home_browsing.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/home_browsing.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_category_car.png.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/category_car.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-mdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/layout_fragment_messages.xml.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/layout/fragment_messages.xml"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_spinner_gif.gif.flat",
@@ -528,6 +560,10 @@
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xhdpi/ic_settings_white_24dp.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable_ic_home_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable/ic_home_white_48dp.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_nike_shoes.jpg.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/nike_shoes.jpg"
     },
@@ -542,6 +578,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_phone_category.png.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/phone_category.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_home_browsing_filled.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/home_browsing_filled.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_home_black_24dp.png.flat",
@@ -574,6 +614,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable_design_snackbar_background.xml.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/res/drawable/design_snackbar_background.xml"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_home_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/ic_home_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -892,10 +936,6 @@
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/face_4.jpg"
     },
     {
-        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
-    },
-    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_zombie.png.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/zombie.png"
     },
@@ -950,6 +990,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xxhdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_chat_bubble_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/ic_chat_bubble_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
@@ -1140,6 +1184,10 @@
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/ic_account_box_black_24dp.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_chat_bubble_outline_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/ic_chat_bubble_outline_white_48dp.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/layout_design_text_input_password_icon.xml.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/res/layout/design_text_input_password_icon.xml"
     },
@@ -1182,6 +1230,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/color_abc_tint_seek_thumb.xml.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_home_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/ic_home_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/layout_activity_notifications.xml.flat",
@@ -1532,16 +1584,20 @@
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xxhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ic_invert_colors_black_24dp.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/floatingsearchview-2.1.1.aar/56776a3c6b36ab09fd9177e8c0ea8c5a/res/drawable-xhdpi-v4/ic_invert_colors_black_24dp.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_btn_back_98.png.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/btn_back_98.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_chat_bubble_outline_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/ic_chat_bubble_outline_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/layout_activity_post_item.xml.flat",
@@ -1588,6 +1644,10 @@
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/3e994a226f438b2833c2e4fb4db2690b/res/color/common_google_signin_btn_tint.xml"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_home_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/ic_home_white_48dp.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -1610,6 +1670,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_category_home.png.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/category_home.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_explore_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/ic_explore_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_googleg_disabled_color_18.png.flat",
@@ -1638,6 +1702,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-mdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_chat_bubble_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xhdpi/ic_chat_bubble_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi_phone_category.png.flat",
@@ -1728,6 +1796,10 @@
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_explore_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/ic_explore_white_48dp.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_checkmark.png.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/checkmark.png"
     },
@@ -1738,6 +1810,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/font_droid_sans.xml.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/font/droid_sans.xml"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_notifications_none_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/ic_notifications_none_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
@@ -1790,6 +1866,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-v21_ic_menu_manage.xml.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-v21/ic_menu_manage.xml"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_notifications_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/ic_notifications_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1846,6 +1926,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/5878fbf14d25bc253bf2af7f736caff3/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_home_browsing_filled.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/home_browsing_filled.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_design_ic_visibility.png.flat",
@@ -2016,6 +2100,10 @@
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/ic_home_black_24dp.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_home_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xhdpi/ic_home_white_48dp.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xxhdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
@@ -2154,6 +2242,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable_abc_vector_test.xml.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_home_browsing_filled.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/home_browsing_filled.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/layout_design_navigation_item_separator.xml.flat",
@@ -2516,6 +2608,10 @@
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/color/abc_secondary_text_material_dark.xml"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_home_browsing.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/home_browsing.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/layout_notification_action_tombstone.xml.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/5878fbf14d25bc253bf2af7f736caff3/res/layout/notification_action_tombstone.xml"
     },
@@ -2534,10 +2630,6 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/color-v23_abc_btn_colored_borderless_text_material.xml.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/color-v23/abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-v21_suggestion_item_background.xml.flat",
@@ -2566,6 +2658,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-mdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/layout_fragment_category.xml.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/layout/fragment_category.xml"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
@@ -2700,12 +2796,20 @@
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/spam.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi_home_browsing_filled.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xhdpi/home_browsing_filled.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_photo_camera_white_48dp.png.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/ic_photo_camera_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_notifications_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/ic_notifications_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_zombie.png.flat",
@@ -2816,6 +2920,10 @@
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xhdpi/category_aparment.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_chat_bubble_outline_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/ic_chat_bubble_outline_white_48dp.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-ldrtl-xhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
     },
@@ -2826,6 +2934,10 @@
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_mic_black_24dp.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/floatingsearchview-2.1.1.aar/56776a3c6b36ab09fd9177e8c0ea8c5a/res/drawable-xxxhdpi-v4/ic_mic_black_24dp.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_home_browsing.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xxxhdpi/home_browsing.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -3016,6 +3128,10 @@
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/ic_more_vert_white_36dp.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_explore_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/ic_explore_white_48dp.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -3108,6 +3224,10 @@
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-hdpi/category_sport.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/layout_fragment_notifications.xml.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/layout/fragment_notifications.xml"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
@@ -3176,6 +3296,14 @@
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/3e994a226f438b2833c2e4fb4db2690b/res/drawable/common_google_signin_btn_icon_disabled.xml"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_explore_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xhdpi/ic_explore_white_48dp.png"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_notifications_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-mdpi/ic_notifications_white_48dp.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/animator-v21_design_appbar_state_list_animator.xml.flat",
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/16a83c37ef4dce75572de0f219b605ca/res/animator-v21/design_appbar_state_list_animator.xml"
     },
@@ -3192,8 +3320,16 @@
         "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_notifications_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xhdpi/ic_notifications_white_48dp.png"
+    },
+    {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/layout_app_bar_browsing.xml.flat",
         "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/layout/app_bar_browsing.xml"
+    },
+    {
+        "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_notifications_none_white_48dp.png.flat",
+        "source": "/Users/radibarq/developer/GayelakAndroid/app/src/main/res/drawable-xhdpi/ic_notifications_none_white_48dp.png"
     },
     {
         "merged": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi_btn_back_98.png.flat",

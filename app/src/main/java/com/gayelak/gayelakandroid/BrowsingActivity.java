@@ -3,11 +3,20 @@ package com.gayelak.gayelakandroid;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.SearchView;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -24,7 +33,10 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.arlib.floatingsearchview.FloatingSearchView;
+import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.firebase.geofire.GeoFire;
@@ -43,14 +55,13 @@ public class BrowsingActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     NavigationView navigationView;
-   // ArrayList<String> finalItems;
-   // GeoFire geoFire;
-  //  DatabaseReference geoFireDatabaseRef;
-   // GridView gridView;
-  //  DisplayMetrics displayMetrics;
     com.arlib.floatingsearchview.FloatingSearchView mSearchView;
     TextView navSlideshow, navGallery;
+    ViewPager viewPager;
+    TabLayout tabLayout;
+    String[] ownProfileTabs = {"المبيوعات مسبقا", "المعروضات للبيع", "المفضلة"};
 
+    BrowsingFragment browsingFragment = new BrowsingFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -58,6 +69,8 @@ public class BrowsingActivity extends AppCompatActivity
         setContentView(R.layout.activity_browsing);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         mSearchView = (com.arlib.floatingsearchview.FloatingSearchView) findViewById(R.id.floating_search_view);
+        initializeTabLayout();
+
         setSupportActionBar(toolbar);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -69,27 +82,42 @@ public class BrowsingActivity extends AppCompatActivity
             }
         });
 
-       // finalItems = new ArrayList<String>();
-       // geoFireDatabaseRef = FirebaseDatabase.getInstance().getReference().child("items-location");
-       // geoFire = new GeoFire(geoFireDatabaseRef);
-
-        //displayMetrics = new DisplayMetrics();
-      //  getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         mSearchView.attachNavigationDrawerToMenuButton(drawer);
-        toggle.syncState();
+        mSearchView.setOnSearchListener(new FloatingSearchView.OnSearchListener() {
+            @Override
+            public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
 
+            }
+
+            @Override
+            public void onSearchAction(String currentQuery) {
+
+                browsingFragment.onSearchButtonClicked(currentQuery);
+            }
+        });
+
+        mSearchView.setOnQueryChangeListener(new FloatingSearchView.OnQueryChangeListener() {
+            @Override
+            public void onSearchTextChanged(String oldQuery, final String newQuery) {
+
+                 if(newQuery.matches(""))
+                 {
+                     browsingFragment.clearSearch();
+                 }
+            }
+        });
+
+        toggle.syncState();
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerview = navigationView.getHeaderView(0);
         navGallery=(TextView) MenuItemCompat.getActionView(navigationView.getMenu().
                 findItem(R.id.nav_chat));
         navSlideshow=(TextView) MenuItemCompat.getActionView(navigationView.getMenu().
                 findItem(R.id.nav_notifications));
-
 
         ImageView headerProfilePicture = (ImageView) headerview.findViewById(R.id.imageView);
         headerProfilePicture.setOnClickListener(new View.OnClickListener() {
@@ -105,13 +133,98 @@ public class BrowsingActivity extends AppCompatActivity
             }
         });
 
+
         initializeSearchView();
         getSupportActionBar().hide();
         navigationView.setNavigationItemSelectedListener(this);
-       // gridView = (GridView) findViewById(R.id.gridview);
         initializeCountDrawer();
         initializeHeaderItems();
-        getItems();
+    }
+
+
+    private void initializeTabLayout()
+    {
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        viewPager.setAdapter(new sliderAdapter(getSupportFragmentManager(), ownProfileTabs));
+        tabLayout.post(new Runnable() {
+            @Override
+            public void run() {
+
+                tabLayout.setupWithViewPager(viewPager);
+                tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_white_48dp);
+                tabLayout.getTabAt(1).setIcon(R.drawable.ic_explore_white_48dp);
+                tabLayout.getTabAt(2).setIcon(R.drawable.ic_chat_bubble_outline_white_48dp);
+                tabLayout.getTabAt(3).setIcon(R.drawable.ic_notifications_none_white_48dp);
+
+                tabLayout.getTabAt(0).getIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+                tabLayout.getTabAt(1).getIcon().setColorFilter(Color.parseColor("#80FFFFFF"), PorterDuff.Mode.SRC_IN);
+                tabLayout.getTabAt(2).getIcon().setColorFilter(Color.parseColor("#80FFFFFF"), PorterDuff.Mode.SRC_IN);
+                tabLayout.getTabAt(3).getIcon().setColorFilter(Color.parseColor("#80FFFFFF"), PorterDuff.Mode.SRC_IN);
+
+                tabLayout.addOnTabSelectedListener(
+                        new TabLayout.ViewPagerOnTabSelectedListener(viewPager) {
+
+                            @Override
+                           public void onTabSelected(TabLayout.Tab tab) {
+                                int position = tab.getPosition();
+
+                                if (position == 0)
+                                {
+                                    tab.setIcon(R.drawable.ic_home_white_48dp);
+
+                                }
+
+                                else if(position == 1)
+                                {
+                                    tab.setIcon(R.drawable.ic_explore_white_48dp);
+                                }
+                                else if(position == 2)
+                                {
+                                    tab.setIcon(R.drawable.ic_chat_bubble_white_48dp);
+
+                                }
+
+                                else {
+
+                                    tab.setIcon(R.drawable.ic_notifications_white_48dp);
+                                }
+
+                                tab.getIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+                            }
+
+                            @Override
+                            public void onTabUnselected(TabLayout.Tab tab) {
+
+                                int position = tab.getPosition();
+
+                                if (position == 0)
+                                {
+                                    tab.setIcon(R.drawable.ic_home_white_48dp);
+
+                                }
+
+                                else if(position == 1)
+                                {
+                                    tab.setIcon(R.drawable.ic_explore_white_48dp);
+                                }
+                                else if(position == 2)
+                                {
+                                    tab.setIcon(R.drawable.ic_chat_bubble_outline_white_48dp);
+
+                                }
+
+                                else {
+
+                                    tab.setIcon(R.drawable.ic_notifications_none_white_48dp);
+                                }
+
+                                tab.getIcon().setColorFilter(Color.parseColor("#80FFFFFF"), PorterDuff.Mode.SRC_IN);
+                            }
+                        }
+                );
+            }
+        });
     }
 
     private void initializeSearchView()
@@ -230,12 +343,11 @@ public class BrowsingActivity extends AppCompatActivity
         switch (id)
         {
             case R.id.nav_home:
-
                 break;
+
             case R.id.nav_sell:
                 Intent sellActivity = new Intent(BrowsingActivity.this, PostItemActivity.class);
                 startActivity(sellActivity);
-
                 break;
 
             case R.id.nav_chat:
@@ -247,7 +359,6 @@ public class BrowsingActivity extends AppCompatActivity
                 Intent notificationActivity = new Intent(BrowsingActivity.this, NotificationsActivity.class);
                 startActivity(notificationActivity);
                 break;
-
 
             case R.id.nav_discover:
                 break;
@@ -289,49 +400,43 @@ public class BrowsingActivity extends AppCompatActivity
         headerEmail.setText(LoginActivity.user.Email);
     }
 
-    private void getItems()
+    private class sliderAdapter extends FragmentPagerAdapter
     {
-        // TODO add the current location
-        GeoQuery geoQuery = geoFire.queryAtLocation(new GeoLocation(32.216382, 35.248197), 1);
-        geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
-            @Override
-            public void onKeyEntered(String key, GeoLocation location) {
+        String tabs[];
 
-                    finalItems.add(key);
+        public sliderAdapter(FragmentManager fm, String tabs[]) {
+
+            super(fm);
+            this.tabs = tabs;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+
+            if (position == 0)
+            {
+                return browsingFragment;
             }
 
-            @Override
-            public void onKeyExited(String key) {
-
+            else if (position == 1)
+            {
+                return new CategoryFragment();
             }
 
-            @Override
-            public void onKeyMoved(String key, GeoLocation location) {
-
+            else if(position == 2)
+            {
+                return new MessagesFragment();
             }
 
-            @Override
-            public void onGeoQueryReady() {
-
-                gridView.setAdapter(new BrowsingImageAdapter(BrowsingActivity.this, finalItems, displayMetrics.heightPixels, displayMetrics.widthPixels));
-                gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    public void onItemClick(AdapterView<?> parent, View v,
-                                            int position, long id) {
-                        BrowsingItemActivity.itemId = finalItems.get(position);
-                        intentToItem();
-                    }
-                });
+            else
+            {
+                return new NotificationsFragment();
             }
-            @Override
-            public void onGeoQueryError(DatabaseError error) {
+        }
 
-            }
-        });
-    }
-
-    private void intentToItem()
-    {
-        Intent intent  = new Intent(this, BrowsingItemActivity.class);
-        startActivity(intent);
+        @Override
+        public int getCount() {
+            return 4;
+        }
     }
 }

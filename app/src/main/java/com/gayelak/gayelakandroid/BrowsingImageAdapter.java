@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 class BrowsingImageAdapter extends BaseAdapter {
 
@@ -27,6 +29,8 @@ class BrowsingImageAdapter extends BaseAdapter {
     double screenWidth;
     double screenHeight;
 
+    // these are 12 colors
+    String randomColors[] = {"#8C9EFF", "#536DFE", "#3D5AFE", "#304FFE", "#7C4DFF", "#651FFF", "#FF4081", "#F50057", "#29B6F6", "#03A9F4", "#69F0AE", "#00E676"};
     public BrowsingImageAdapter(Context c, ArrayList<String> itemsKeys, double screenHeight, double screenWidth)
     {
         this.itemsKeys = itemsKeys;
@@ -34,8 +38,8 @@ class BrowsingImageAdapter extends BaseAdapter {
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.screenHeight = screenHeight;
         this.screenWidth = screenWidth;
-
     }
+
 
     @Override
     public int getCount() {
@@ -45,12 +49,12 @@ class BrowsingImageAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return position;
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
@@ -60,13 +64,16 @@ class BrowsingImageAdapter extends BaseAdapter {
         view = mInflater.inflate(R.layout.layout_browsing_image_adapter,parent,false);
         view.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT,  (int) (screenHeight/3.5)));
         ImageView imageView = view.findViewById(R.id.imageView);
+        Random rand = new Random();
+        int  n = rand.nextInt(12);
+        String randomColor = randomColors[n];
+        imageView.setBackgroundColor(Color.parseColor(randomColor));
         StorageReference imageStorageRef = FirebaseStorage.getInstance().getReference().child("Items_Photos").child(itemsKeys.get(position)).child("1.jpeg");
         Glide.with(mContext)
                 .using(new FirebaseImageLoader())
-                .load(imageStorageRef).animate(android.R.anim.fade_in).thumbnail(Glide.with(mContext).load(R.drawable.spinner_gif)).crossFade()
+                .load(imageStorageRef)
                 .into(imageView);
         return  view;
-
     }
 
 }

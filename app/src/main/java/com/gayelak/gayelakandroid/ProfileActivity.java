@@ -44,6 +44,7 @@ public class ProfileActivity extends AppCompatActivity {
     String[] ownProfileTabs = {"المبيوعات مسبقا", "المعروضات للبيع", "المفضلة"};
     String[] notOwnProfileTabs = {"المبيوعات مسبقا", "المعروضات للبيع"};
     ImageView profileSettingsImageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

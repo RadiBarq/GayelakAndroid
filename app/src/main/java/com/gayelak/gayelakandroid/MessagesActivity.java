@@ -40,49 +40,51 @@ public class MessagesActivity extends AppCompatActivity {
         loadingAnimationView.setVisibility(View.GONE);
         MessagesListViewAdapter messagesListViewAdapter = new MessagesListViewAdapter(this, displayMetrics.heightPixels, loadingAnimationView);
         listView.setAdapter(messagesListViewAdapter);
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+            listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
-                CharSequence userOperations[] = new CharSequence[]{"حذر المستخدم","حذف المستخدم","التبليغ عن المستخدم"};
-                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                builder.setTitle("الرسائل").setItems(userOperations,new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
-                        String clickedUserKey = MessagesListViewAdapter.usersKeys.get(position);
-                        String userName = MessagesListViewAdapter.usersNames.get(position);
-                        // The 'which' argument contains the index position
-                        // of the selected item
-                        if (which == 0)
-                        {
-                            //block user
-                            FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(clickedUserKey).removeValue();
-                            FirebaseDatabase.getInstance().getReference().child("Users").child(clickedUserKey).child("chat").child(LoginActivity.user.UserId).removeValue();
-                            FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("block").child(clickedUserKey).setValue(userName);
+                    CharSequence userOperations[] = new CharSequence[]{"حذر المستخدم","حذف المستخدم","التبليغ عن المستخدم"};
+                    AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                    builder.setTitle("الرسائل").setItems(userOperations,new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            String clickedUserKey = MessagesListViewAdapter.usersKeys.get(position);
+                            String userName = MessagesListViewAdapter.usersNames.get(position);
+                            // The 'which' argument contains the index position
+                            // of the selected item
+                            if (which == 0)
+                            {
+                                //block user
+                                FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(clickedUserKey).removeValue();
+                                FirebaseDatabase.getInstance().getReference().child("Users").child(clickedUserKey).child("chat").child(LoginActivity.user.UserId).removeValue();
+                                FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("block").child(clickedUserKey).setValue(userName);
+                            }
+
+                            else if (which == 1)
+                            {
+                                //delete user here to delete the user
+                                FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(clickedUserKey).removeValue();
+
+                            }
+
+                            else if (which == 2)
+                            {
+                                //report user
+                                ReportUserActivity.reportedUserId = clickedUserKey;
+                                Intent reportUserIntent = new Intent(MessagesActivity.this, ReportUserActivity.class);
+                                startActivity(reportUserIntent);
+                            }
                         }
+                    });
 
-                        else if (which == 1)
-                        {
-                            //delete user here to delete the user
-                            FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(clickedUserKey).removeValue();
+                    builder.setNegativeButton("اغلاق", null);
+                    builder.show();
+                    return true;
+                }
+            });
 
-                        }
-
-                        else if (which == 2)
-                        {
-                            //report user
-                            ReportUserActivity.reportedUserId = clickedUserKey;
-                            Intent reportUserIntent = new Intent(MessagesActivity.this, ReportUserActivity.class);
-                            startActivity(reportUserIntent);
-                        }
-                    }
-                });
-
-                builder.setNegativeButton("اغلاق", null);
-                builder.show();
-                return true;
-            }
-        });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -134,8 +136,6 @@ public class MessagesActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-
 
     }
 }
