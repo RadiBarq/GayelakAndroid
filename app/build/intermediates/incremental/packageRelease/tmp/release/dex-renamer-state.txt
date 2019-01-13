@@ -1,0 +1,7 @@
+#Mon Jan 14 01:14:47 EET 2019
+base.0=/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/transforms/dexMerger/release/0
+path.1=classes2.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/transforms/dexMerger/release/0

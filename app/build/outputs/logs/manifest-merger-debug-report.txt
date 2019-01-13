@@ -21,6 +21,7 @@ MERGED from [me.relex:photodraweeview:1.1.3] /Users/radibarq/.gradle/caches/tran
 MERGED from [com.firebase:geofire-android:2.2.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/geofire-android-2.2.0.aar/ac3fbac0946bc17c09658f0aeaa8998e/AndroidManifest.xml:1:1-5:12
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-location-16.0.0.aar/6c761e0bf2d453d0e066c0212e30dee9/AndroidManifest.xml:2:1-9:12
 MERGED from [me.everything:overscroll-decor-android:1.0.4] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/overscroll-decor-android-1.0.4.aar/a77ae745fcd461f65ee956ba245418d7/AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.support:multidex:1.0.3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/0b5ddbddd0218668a9a6ca9614a4f764/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/31a387f48a6fc6fa0e667f41e1460f63/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/3509c4c7a474bf13a260b32ca340d249/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/f447b2860f1a5519df236637efa86571/AndroidManifest.xml:2:1-11:12
@@ -510,6 +511,8 @@ MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/radiba
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/play-services-location-16.0.0.aar/6c761e0bf2d453d0e066c0212e30dee9/AndroidManifest.xml:5:5-44
 MERGED from [me.everything:overscroll-decor-android:1.0.4] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/overscroll-decor-android-1.0.4.aar/a77ae745fcd461f65ee956ba245418d7/AndroidManifest.xml:8:5-10:41
 MERGED from [me.everything:overscroll-decor-android:1.0.4] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/overscroll-decor-android-1.0.4.aar/a77ae745fcd461f65ee956ba245418d7/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:multidex:1.0.3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/0b5ddbddd0218668a9a6ca9614a4f764/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.3] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/0b5ddbddd0218668a9a6ca9614a4f764/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/31a387f48a6fc6fa0e667f41e1460f63/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.1.0] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/31a387f48a6fc6fa0e667f41e1460f63/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/3509c4c7a474bf13a260b32ca340d249/AndroidManifest.xml:20:5-44
