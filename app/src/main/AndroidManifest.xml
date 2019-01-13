@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     package="com.gayelak.gayelakandroid">
 
     <uses-feature
@@ -11,7 +12,8 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -20,12 +22,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <service
+            android:name="MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
         <activity
             android:name=".WelcomeActivity"
-            android:theme="@style/AppThemeNoActionBar">
+            android:theme="@style/WelcomeActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -47,10 +68,11 @@
         <activity
             android:name=".BrowsingActivity"
             android:label="تصفح"
-
             android:theme="@style/AppTheme.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
 
             <meta-data
@@ -80,7 +102,8 @@
             >
         </activity>
         <activity android:name=".CategoriesActivity"
-            android:label="التصنيفات"
+            android:label="اختر نوع المنتج"
+
             ></activity>
         <activity
             android:name=".NotificationsActivity"
@@ -91,7 +114,10 @@
         <activity
             android:name=".BrowsingItemFullImageActivity"
             android:theme="@style/AppThemeNoActionBarProfile" />
-        <activity android:name=".BrowsingSettingsActivity" />
+        <activity android:name=".BrowsingSettingsActivity"
+                  android:label="اعدادات التصفح"
+                  android:theme="@style/browsing_settings_menu_text_style"
+            ></activity>
         <activity android:name=".ReportUserActivity"
             android:label="التبليغ عن مستخدم"
             >
@@ -105,7 +131,37 @@
         <activity
             android:name=".PostItemActivity"
             android:theme="@style/AppThemePostItem"></activity>
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity"
+            android:theme="@style/AppThemeNoActionBarChat"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            >
+
+        </activity>
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="label" />
+        <!-- To use multiple models: android:value="label,model2,model3" -->
+
+
     </application>
 
 </manifest>

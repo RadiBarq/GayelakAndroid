@@ -3,14 +3,23 @@ package com.gayelak.gayelakandroid;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,18 +39,32 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.ml.vision.FirebaseVision;
+import com.google.firebase.ml.vision.common.FirebaseVisionImage;
+import com.google.firebase.ml.vision.label.FirebaseVisionLabel;
+import com.google.firebase.ml.vision.label.FirebaseVisionLabelDetector;
+import com.google.firebase.ml.vision.label.FirebaseVisionLabelDetectorOptions;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.airbnb.lottie.LottieAnimationView;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Currency;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+
+import static com.gayelak.gayelakandroid.BrowsingFragment.MY_PERMISSIONS_REQUEST_LOCATION;
 
 public class PostItemActivity extends AppCompatActivity {
 
@@ -51,6 +74,11 @@ public class PostItemActivity extends AppCompatActivity {
     // this is related to the description edit_text
     EditText descriptionEditText;
     int lastSpecialRequestsCursorPosition = 0;
+    private static final int CONTENT_VIEW_ID = 10101010;
+     double longitude;
+    static int counter = 0;
+     double latitude;
+
     String specialRequests = "";
     final int GALLERY_REQUEST = 1;
     final int CAMERA_REQUEST = 0;
@@ -64,7 +92,7 @@ public class PostItemActivity extends AppCompatActivity {
     private Location currentLocation;
     private RadioButton localeRadioButton;
     private LottieAnimationView animationView;
-
+    LocationManager mLocationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +117,8 @@ public class PostItemActivity extends AppCompatActivity {
         getCurrentLocation();
         animationView = (LottieAnimationView) findViewById(R.id.lottieAnimationView);
         animationView.setVisibility(View.GONE);
+        mLocationManager = (LocationManager)  this.getSystemService(Context.LOCATION_SERVICE);
+
 
         // This is to limit the lines of the description to six
         descriptionEditText.addTextChangedListener(new TextWatcher() {
@@ -124,6 +154,14 @@ public class PostItemActivity extends AppCompatActivity {
         }
 
       setTitle("بيع منتجاتك");
+
+        FirebaseVisionLabelDetectorOptions options =
+                new FirebaseVisionLabelDetectorOptions.Builder()
+                        .setConfidenceThreshold(0.8f)
+                        .build();
+
+        checkLocationPermission();
+
     }
 
     // this will be called from the adapter my lord.
@@ -166,6 +204,66 @@ public class PostItemActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // location-related task you need to do.
+                    if (ContextCompat.checkSelfPermission(PostItemActivity.this,
+                            Manifest.permission.ACCESS_FINE_LOCATION)
+                            == PackageManager.PERMISSION_GRANTED) {
+
+                        LocationListener locationListener = new LocationListener() {
+                            public void onLocationChanged(Location location) {
+                                // Called when a new location is found by the network location provider.
+                                //makeUseOfNewLocation(location);
+                                currentLocation = location;
+                                longitude = location.getLongitude();
+                                latitude = location.getLatitude();
+
+                            }
+
+                            public void onStatusChanged(String provider, int status, Bundle extras) {
+                            }
+
+                            public void onProviderEnabled(String provider) {
+                            }
+
+                            public void onProviderDisabled(String provider) {
+                            }
+                        };
+
+
+                        //Request location updates:
+                        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+                        String locationProvider = LocationManager.NETWORK_PROVIDER;
+                        Location lastKnownLocation = mLocationManager.getLastKnownLocation(locationProvider);
+                        currentLocation = lastKnownLocation;
+                        longitude = lastKnownLocation.getLongitude();
+                        latitude = lastKnownLocation.getLatitude();
+                     //   getItems();
+
+                    }
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(PostItemActivity.this, "عزيزي المستخدم لا تستطيع اضافة منتجك على جايلك بدون السماح لجايك من استخدام خدمة المواقع على جهازك!", Toast.LENGTH_LONG);
+                }
+                return;
+            }
+
+        }
+    }
+
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // handle arrow click here
         if (item.getItemId() == android.R.id.home) {
@@ -174,6 +272,8 @@ public class PostItemActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
     @SuppressLint("MissingPermission")
     public void onClickPost(View view) {
 
@@ -223,11 +323,9 @@ public class PostItemActivity extends AppCompatActivity {
 
     private void playAnimation()
     {
-
         animationView.playAnimation();
         animationView.loop(true);
         animationView.setVisibility(View.VISIBLE);
-
     }
 
     private void stopAnimation()
@@ -235,7 +333,6 @@ public class PostItemActivity extends AppCompatActivity {
         // If something goes wrong.
         animationView.cancelAnimation();
         animationView.setVisibility(View.GONE);
-
     }
 
     private void uploadPictures(String itemId) {
@@ -243,12 +340,15 @@ public class PostItemActivity extends AppCompatActivity {
         int counter = 1;
 
         for (int i = 0; i <= 3; i++) {
+
+
             if (PostItemActivity.postedItemImages[i] != null) {
 
                 FirebaseStorage storage = FirebaseStorage.getInstance();
                 storage = FirebaseStorage.getInstance();
                 StorageReference storageRef = storage.getReference();
                 storageRef = storageRef.child("Items_Photos").child(itemId).child(counter + ".jpeg");
+
 
                 Bitmap bitmap = PostItemActivity.postedItemImages[i];
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -277,6 +377,7 @@ public class PostItemActivity extends AppCompatActivity {
                 counter++;
             }
         }
+
         uploadGeoLocationData(itemId, currentLocation);
     }
 
@@ -298,11 +399,11 @@ public class PostItemActivity extends AppCompatActivity {
                 }
             }
         });
+
         //uploadGeoLocationData(itemKey, currentLocation);
     }
 
     private void getCurrentLocation() {
-
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -318,40 +419,20 @@ public class PostItemActivity extends AppCompatActivity {
             return;
         }
 
-        mFusedLocationClient.getLastLocation()
-                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                    @Override
-                    public void onSuccess(Location location) {
-                        // Got last known location. In some rare situations this can be null.
-                        if (location != null) {
-                            // Logic to handle location object
-                            currentLocation = location;
-
-                        }
-                    }
-                });
+//       // mFusedLocationClient.getLastLocation()
+//                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+//                    @Override
+//                    public void onSuccess(Location location) {
+//                        // Got last known location. In some rare situations this can be null.
+//                        if (location != null) {
+//                            // Logic to handle location object
+//                            currentLocation = location;
+//
+//                        }
+//                    }
+//                });
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case 1: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                } else {
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-                    Toast.makeText(PostItemActivity.this, "عزيزي المستخدم لا تستطيع اضافة منتجك على جايلك بدون السماح لجايك من استخدام خدمة المواقع على جهازك!", Toast.LENGTH_LONG);
-                }
-
-                return;
-            }
-            // other 'case' lines to check for other
-            // permissions this app might request
-        }
-    }
 
     private int getNumberOfImages() {
         int counter = 0;
@@ -373,7 +454,7 @@ public class PostItemActivity extends AppCompatActivity {
         GeoFire geoFire = new GeoFire(geoLocationDatabaseRef);
 
         // here should be itemLocation.getLatitude(), itemLocation.getLongitude() instead of these static data my lordy lord
-        geoFire.setLocation(itemId, new GeoLocation(37.785834, -122.406417), new GeoFire.CompletionListener() {
+        geoFire.setLocation(itemId, new GeoLocation(latitude, longitude), new GeoFire.CompletionListener() {
             @Override
             public void onComplete(String key, DatabaseError error) {
 
@@ -395,7 +476,172 @@ public class PostItemActivity extends AppCompatActivity {
     {
         stopAnimation();
         FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("items").child(itemId).setValue("");
-        Toast.makeText(PostItemActivity.this, "posting items works", Toast.LENGTH_SHORT).show();
+        String[] splited = titleEditText.getText().toString().split(" ");
+        DatabaseReference tagsReference = FirebaseDatabase.getInstance().getReference().child("tags").getRef();
+        HashSet<String> set = new HashSet<String>();
+
+
+        for (int i = 0; i < splited.length; i++)
+        {
+            String tag = splited[i];
+            //Map<String, Object> childUpdates = new HashMap<>();
+            //childUpdates.put(itemId, "");
+            //tagsReference.child(tag).updateChildren(childUpdates);
+            set.add(tag);
+        }
+
+        // add AI based description to the photos.
+        addAIDescription(set, itemId);
+       // Toast.makeText(PostItemActivity.this, "posting items works", Toast.LENGTH_SHORT).show();
+        //CategoriesActivity.itemId = itemId;
+       // Intent intent  = new Intent(this, CategoriesActivity.class);
+        //startActivity(intent);
+        //this.finish();
+    }
+
+    private void  addAIDescription(HashSet<String> tagsSet, String itemId)
+    {
+        HashSet<String> currentSet = tagsSet;
+        counter = 0;
+
+        for (int i = 0; i < PostItemActivity.postedItemImages.length; i++)
+        {
+            Bitmap bitmap = PostItemActivity.postedItemImages[i];
+           // Set<String> hash_Set = new HashSet<String>();
+
+            if (bitmap == null)
+            {
+                counter++;
+                continue;
+            }
+
+            FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
+            FirebaseVisionLabelDetector detector = FirebaseVision.getInstance()
+                    .getVisionLabelDetector();
+
+            Task<List<FirebaseVisionLabel>> result =
+                    detector.detectInImage(image)
+                            .addOnSuccessListener(
+
+                                    new OnSuccessListener<List<FirebaseVisionLabel>>() {
+                                        @Override
+                                        public void onSuccess(List<FirebaseVisionLabel> labels) {
+                                            // Task completed successfully
+                                            // ..
+                                            for (FirebaseVisionLabel label: labels) {
+
+                                                String text = label.getLabel();
+                                                currentSet.add(text);
+                                                //String entityId = label.getEntityId();
+                                                //float confidence = label.getConfidence();
+                                            }
+
+
+                                            if (counter == PostItemActivity.postedItemImages.length - 1)
+                                            {
+                                                System.out.println(currentSet);
+                                                DatabaseReference tagsReference = FirebaseDatabase.getInstance().getReference().child("tags").getRef();
+                                                String[] array = Arrays.copyOf(currentSet.toArray(), currentSet.size(), String[].class);
+                                                String finaleText = "";
+
+                                                for (int i = 0; i < array.length; i++)
+                                                {
+                                                    String tag = array[i];
+                                                    Map<String, Object> childUpdates = new HashMap<>();
+                                                    childUpdates.put(itemId, "");
+                                                    tagsReference.child(tag.toLowerCase()).updateChildren(childUpdates);
+                                                    String stringTest = titleEditText.getText().toString();
+
+                                                    if (titleEditText.getText().toString().matches(""))
+                                                    {
+                                                        if (i == array.length - 1)
+                                                        {
+                                                            finaleText = finaleText + tag.toLowerCase();
+
+                                                            FirebaseDatabase.getInstance().getReference().child("items").child(itemId).child("title").setValue(finaleText.substring(1));
+                                                        }
+
+                                                        else {
+
+                                                            finaleText = finaleText + tag.toLowerCase() + ", ";
+                                                        }
+
+                                                    }
+                                                    //set.add(tag);
+                                                }
+
+                                                Intent intent  = new Intent(PostItemActivity.this, CategoriesActivity.class);
+                                                CategoriesActivity.itemId = itemId;
+                                                startActivity(intent);
+                                                finish();
+
+                                                // add AI based description to the photos
+                                            }
+
+                                            counter = counter + 1;
+                                        }
+                                    })
+                            .addOnFailureListener(
+                                    new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            // Task failed with an exception
+                                            // ...
+                                            Log.d("firebase ml message", e.getLocalizedMessage());
+                                        }
+                                    });
+        }
+    }
+
+
+    public boolean checkLocationPermission() {
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+                new AlertDialog.Builder(this)
+                        .setTitle("تفعيل خدمة المواقع")
+                        .setMessage("نود استخدام خدمة المواقع خاصتك حتي نعرض لك المنتجات الاقرب لك!")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                //Prompt the user once explanation has been shown
+                                ActivityCompat.requestPermissions(PostItemActivity.this,
+                                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                                        MY_PERMISSIONS_REQUEST_LOCATION);
+                            }
+                        })
+                        .create()
+                        .show();
+
+
+            } else {
+                // No explanation needed, we can request the permission.
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_LOCATION);
+            }
+            return false;
+        } else {
+
+            String locationProvider = LocationManager.NETWORK_PROVIDER;
+            Location lastKnownLocation = mLocationManager.getLastKnownLocation(locationProvider);
+            latitude = lastKnownLocation.getLatitude();
+            longitude = lastKnownLocation.getLongitude();
+            currentLocation = lastKnownLocation;
+            return true;
+
+        }
+
+
     }
 
 }

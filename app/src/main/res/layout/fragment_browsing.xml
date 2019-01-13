@@ -6,19 +6,71 @@
     android:layout_height="match_parent"
     tools:context="com.gayelak.gayelakandroid.BrowsingFragment">
 
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:background="#ffffff"
+        android:columnWidth="160dp"
+        android:horizontalSpacing="0dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+    <Button
+        android:id="@+id/enableLocationButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/profile_change_settings_bg_rounded"
+        android:drawableTint="@color/colorAccent"
+        android:text="فعل خدمة الموقع"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noLocationAvailableTextView" />
+
+
     <TextView
         android:id="@+id/animationDescriptionTextView"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
         android:text="لم نتمكن من ايجاد نتائج بالقرب منك، حاول البحث عن شيئ اخر او حاول في وقت لاحق"
         android:textAlignment="center"
         android:textColor="#74798e"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/noLocationAvailableTextView"
+        android:layout_width="0dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="لم نتمكن من عرض المنتجات، الرجاء السماح لجاليلك من استخدام خدمة المواقع في جهازك."
+        android:textAlignment="center"
+        android:textColor="#74798e"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,22 +106,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_fileName="location-animation.json" />
-
-    <GridView
-        android:id="@+id/gridView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="0dp"
-        android:background="#ffffff"
-        android:columnWidth="160dp"
-        android:horizontalSpacing="0dp"
-        android:numColumns="auto_fit"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
-
 
 </android.support.constraint.ConstraintLayout>

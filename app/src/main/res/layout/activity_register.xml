@@ -8,11 +8,21 @@
     android:gravity="center_horizontal"
     tools:context="com.gayelak.gayelakandroid.RegisterActivity">
 
-    <!-- Login progress -->
-    <AutoCompleteTextView
+    <android.support.design.widget.TextInputLayout
         android:id="@+id/passwordText"
         android:layout_width="300dp"
         android:layout_height="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        >
+
+    <!-- Login progress -->
+    <AutoCompleteTextView
+        android:id="@+id/passwordEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:hint="اسم المستخدم"
         android:imeActionLabel="تسجيل"
         android:inputType="textEmailAddress"
@@ -22,15 +32,13 @@
         android:textColorLink="@android:color/background_dark"
         android:textCursorDrawable="@null"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        />
 
+    </android.support.design.widget.TextInputLayout>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView"
-        android:layout_width="75dp"
+        android:layout_width="72dp"
         android:layout_height="75dp"
         android:alpha="0.8"
         android:background="@drawable/progress_animation_bg_rounded_corners"
@@ -40,7 +48,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_fileName="animation-w500-h500.json" />
-
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -96,6 +103,7 @@
 
     <Button
         android:id="@+id/email_sign_in_button"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="328dp"
         android:layout_height="50dp"
         android:layout_marginTop="25dp"

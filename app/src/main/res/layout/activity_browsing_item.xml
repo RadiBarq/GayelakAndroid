@@ -47,9 +47,8 @@
             android:id="@+id/profileImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
             android:onClick="onClickProfileImage"
-            app:srcCompat="@drawable/profile_picture" />
+            android:scaleType="fitXY" />
     </android.support.v7.widget.CardView>
 
 
@@ -71,7 +70,7 @@
     <TextView
         android:id="@+id/price"
         android:layout_width="150dp"
-        android:layout_height="21dp"
+        android:layout_height="20dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:text="$400"
@@ -84,9 +83,8 @@
         android:id="@+id/distance"
         android:layout_width="150dp"
         android:layout_height="21dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="15dp"
-        android:text=" 106 متر"
+        android:layout_marginEnd="10dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2" />
@@ -95,11 +93,10 @@
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:layout_marginEnd="10dp"
         android:textAlignment="center"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/distance" />
@@ -108,14 +105,15 @@
         android:id="@+id/descriptionEditText"
         android:layout_width="0dp"
         android:layout_height="102dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
         android:autoSizeTextType="uniform"
-        android:autoText="false"
-        android:text="Teaching Alexander the Great gave Aristotle many opportunities and an abundance of supplies. He established a library in the Lyceum which aided in the production of many of his hundreds of books, which were written on papyrus scrolls.[8] The fact that Aristotle was a pupil of Plato contributed to his former views of Platonism, but, following Plato's death, Aristotle immersed himself in empirical studies and shifted from Platonism to empiricism.[9] He believed all peoples' concepts and all of their knowledge was ultimately based on perception. Aristotle's views on natural sciences represent the groundwork underlying many of his works."
+        android:autoText="true"
         android:textAlignment="center"
         android:textSize="14sp"
+        app:autoSizeMaxTextSize="14sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/contactButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

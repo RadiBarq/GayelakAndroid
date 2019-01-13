@@ -40,39 +40,40 @@ public class MessagesActivity extends AppCompatActivity {
         loadingAnimationView.setVisibility(View.GONE);
         MessagesListViewAdapter messagesListViewAdapter = new MessagesListViewAdapter(this, displayMetrics.heightPixels, loadingAnimationView);
         listView.setAdapter(messagesListViewAdapter);
-            listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
                 @Override
                 public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
-                    CharSequence userOperations[] = new CharSequence[]{"حذر المستخدم","حذف المستخدم","التبليغ عن المستخدم"};
+                    CharSequence userOperations[] = new CharSequence[]{"حذر المستخدم","حذف المحادثة","التبليغ عن المستخدم"};
                     AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                     builder.setTitle("الرسائل").setItems(userOperations,new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
 
-                            String clickedUserKey = MessagesListViewAdapter.usersKeys.get(position);
-                            String userName = MessagesListViewAdapter.usersNames.get(position);
+                          //  String clickedMessageKey = MessagesListViewAdapter.messagesKeys.get(position);
+                           // String userId = MessagesListViewAdapter.usersKeys.get(position);
+                            //String userName = MessagesListViewAdapter.usersNames.get(position);
                             // The 'which' argument contains the index position
                             // of the selected item
                             if (which == 0)
                             {
-                                //block user
-                                FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(clickedUserKey).removeValue();
-                                FirebaseDatabase.getInstance().getReference().child("Users").child(clickedUserKey).child("chat").child(LoginActivity.user.UserId).removeValue();
-                                FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("block").child(clickedUserKey).setValue(userName);
+
+
+
                             }
 
                             else if (which == 1)
                             {
                                 //delete user here to delete the user
-                                FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(clickedUserKey).removeValue();
+                                //FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(clickedMessageKey).removeValue();
+
 
                             }
 
                             else if (which == 2)
                             {
                                 //report user
-                                ReportUserActivity.reportedUserId = clickedUserKey;
+                               // ReportUserActivity.reportedUserId = userId;
                                 Intent reportUserIntent = new Intent(MessagesActivity.this, ReportUserActivity.class);
                                 startActivity(reportUserIntent);
                             }
@@ -90,30 +91,19 @@ public class MessagesActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                final String clickedUserId = MessagesListViewAdapter.usersKeys.get(position);
+              //  final String clickedUserId = MessagesListViewAdapter.usersKeys.get(position);
+                //final String clickedItemId = MessagesListViewAdapter.itemsKeys.get(position);
+                final String clickedUserName = MessagesListViewAdapter.usersNames.get(position);
 
-                ValueEventListener postListener = new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        // Get Post object and use the values to update the UI
-                        String userName = dataSnapshot.getValue().toString();
-                        ChatActivity.itemUserId = clickedUserId;
-                        ChatActivity.itemUserName = userName;
-                        ChatActivity.cameFromMessages = true;
-                        Intent intent = new Intent(MessagesActivity.this, ChatActivity.class);
-                        startActivity(intent);
-                    }
+              //  ChatActivity.itemUserId = clickedUserId;
+                ChatActivity.itemUserName = clickedUserName;
+                ChatActivity.cameFromMessages = true;
+                //ChatActivity.itemId = clickedItemId;
+                Intent intent = new Intent(MessagesActivity.this, ChatActivity.class);
+                startActivity(intent);
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        // Getting Post failed, log a message
-                        Toast.makeText(MessagesActivity.this, databaseError.getMessage(), Toast.LENGTH_LONG).show();
-                        // ...
-                    }
-                };
-
-                FirebaseDatabase.getInstance().getReference().child("Users").child(clickedUserId).child("UserName").addListenerForSingleValueEvent(postListener);
             }
+
         });
 
         if (getSupportActionBar() != null) {
@@ -138,6 +128,9 @@ public class MessagesActivity extends AppCompatActivity {
         super.onDestroy();
 
     }
+
+
+
 }
 
 

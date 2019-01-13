@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 
@@ -18,7 +19,15 @@ import com.airbnb.lottie.LottieAnimationView;
 
     ListView listView;
 
-    @Override
+
+      @Override
+      public void onAttach(Context context) {
+          super.onAttach(context);
+
+
+      }
+
+      @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -28,9 +37,10 @@ import com.airbnb.lottie.LottieAnimationView;
         listView = view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
         return view;
+
     }
 
- }
+  }
 
 
 

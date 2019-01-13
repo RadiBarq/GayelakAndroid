@@ -27,6 +27,7 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -63,6 +64,8 @@ public class ProfileSettingsActivity extends AppCompatActivity {
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setElevation(0);
+
         }
 
         settingslistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -129,11 +132,13 @@ public class ProfileSettingsActivity extends AppCompatActivity {
                 }
 
                 else{
-                    //logout button should be empty like that.
+
+                  // The implementation of this inside the adapter onClick button listener.
                 }
             }
         });
     }
+
 
     @Override
     protected void onResume() {

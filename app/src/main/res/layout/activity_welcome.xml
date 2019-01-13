@@ -34,7 +34,7 @@
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="@id/userName"
-
+        android:onClick="onClickFacebook"
         app:layout_constraintRight_toRightOf="@id/userName"
         app:layout_constraintTop_toBottomOf="@+id/userName" />
 
@@ -82,6 +82,20 @@
         app:layout_constraintRight_toRightOf="@id/userName"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="72dp"
+        android:layout_height="75dp"
+        android:alpha="0.8"
+        android:background="@drawable/progress_animation_bg_rounded_corners"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_fileName="animation-w500-h500.json" />
+
+
     <TextView
         android:id="@+id/registerTextVIew"
         android:layout_width="wrap_content"
@@ -96,6 +110,7 @@
         app:layout_constraintRight_toRightOf="@id/userName"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
 
-
         />
+
+
 </android.support.constraint.ConstraintLayout>

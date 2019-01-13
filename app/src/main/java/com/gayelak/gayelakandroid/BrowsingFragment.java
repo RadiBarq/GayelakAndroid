@@ -1,10 +1,21 @@
 package com.gayelak.gayelakandroid;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +43,7 @@ import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -42,11 +55,14 @@ import me.everything.android.ui.overscroll.OverScrollDecoratorHelper;
 import me.everything.android.ui.overscroll.VerticalOverScrollBounceEffectDecorator;
 import me.everything.android.ui.overscroll.adapters.AbsListViewOverScrollDecorAdapter;
 
+import static android.content.Context.LOCATION_SERVICE;
 
-public class BrowsingFragment extends Fragment {
+
+public class BrowsingFragment extends Fragment  {
 
     GridView gridView;
     ArrayList<String> finalItems;
+    ArrayList<GeoLocation> finalLocationItems;
     ArrayList<String> carCategoryArray = new ArrayList<String>();
     ArrayList<String> phoneCategoryArray = new ArrayList<String>();
     ArrayList<String> apartmentCategoryArray = new ArrayList<String>();
@@ -71,21 +87,181 @@ public class BrowsingFragment extends Fragment {
     static boolean queryChanged = false;
     private LottieAnimationView loadingAnimationView;
     private LottieAnimationView noItemsAnimationView;
+
+    private Button enableLocationButton;
+
     private LottieAnimationView locationAnimationView;
+    private TextView noLocationAvailableTextView;
     TextView animationDescriptionTextView;
     int maximumRadius;
     int radius;
-    ArrayList<String>itemKeys;
+    ArrayList<String> itemKeys;
+    ArrayList<GeoLocation> itemLocations;
     int currentItemsCount = 0;
     Boolean searchButtonClicked = false;
+    static double longitude;
+    static double latitude;
+    LocationManager mLocationManager;
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+
+    boolean locationEnabled = false;
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        //super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // location-related task you need to do.
+                    if (ContextCompat.checkSelfPermission(getContext(),
+                            Manifest.permission.ACCESS_FINE_LOCATION)
+                            == PackageManager.PERMISSION_GRANTED) {
+
+                        LocationListener locationListener = new LocationListener() {
+
+                            public void onLocationChanged(Location location) {
+                                // Called when a new location is found by the network location provider.
+                                //makeUseOfNewLocation(location);
+                                stopLocationAnimation();
+                                noLocationAvailableTextView.setVisibility(View.GONE);
+                                enableLocationButton.setVisibility(View.GONE);
+                                longitude = location.getLongitude();
+                                latitude = location.getLatitude();
+                               //cation(locationProvider);
+                                getItems();
+
+                            }
+
+
+                            public void onStatusChanged(String provider, int status, Bundle extras) {
+                                //String radi;
+                            }
+
+                            public void onProviderEnabled(String provider) {
+
+                                stopLocationAnimation();
+                                noLocationAvailableTextView.setVisibility(View.GONE);
+                                locationEnabled = true;
+                                //longitude = location.getLongitude();
+                                //latitude = location.getLatitude();
+                                //cation(locationProvider);
+                                //mLocationManager.requestLocationUpdates(provider, 0, 0, locationListener);
+                              //  getItems();
+
+                            }
+
+                            public void onProviderDisabled(String provider) {
+
+                                Toast.makeText(getActivity(), "الرجاء السماح لجايلك باستخدام خدمة المواقع خاصتك لعرض لك المنتجات من واجهة الخصائص!", Toast.LENGTH_LONG).show();
+                                locationEnabled = false;
+                            }
+                        };
+
+
+                        //Request location updates:
+                        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+                        //getItems();
+                    }
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    noLocationAvailableTextView.setVisibility(View.VISIBLE);
+                    enableLocationButton.setVisibility(View.VISIBLE);
+                    playLocationAnimation();
+                    stopLoadingAnimation();
+                }
+
+                return;
+            }
+        }
+    }
+
+
+    private void showLocationDisabled()
+    {
+
+
+
+
+
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view =  inflater.inflate(R.layout.fragment_browsing, container, false);
+        View view = inflater.inflate(R.layout.fragment_browsing, container, false);
         gridView = (GridView) view.findViewById(R.id.gridView);
+        mLocationManager = (LocationManager)  getContext().getSystemService(Context.LOCATION_SERVICE);
 
+        noLocationAvailableTextView = (TextView) view.findViewById(R.id.noLocationAvailableTextView);
+        noLocationAvailableTextView.setVisibility(View.GONE);
+        locationAnimationView = (LottieAnimationView) view.findViewById(R.id.locationAnimationView);
+        // Acquire a reference to the system Location Manager
+       /// mLocationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
+
+
+        enableLocationButton = (Button) view.findViewById(R.id.enableLocationButton);
+
+        enableLocationButton.setVisibility(View.GONE);
+
+        enableLocationButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+
+                checkLocationPermission();
+
+            }
+
+        });
+
+
+// Define a listener that responds to location updates
+
+// Register the listener with the Location Manager to receive location updates
+//        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            // TODO: Consider calling
+//            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+//            //    ActivityCompat#requestPermissions
+//            // here to request the missing permissions, and then overriding
+//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//            //                                          int[] grantResults)
+//            // to handle the case where the user grants the permission. See the documentation
+//            // for ActivityCompat#requestPermissions for more details.
+//        }
+
+
+
+
+//        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+////             TODO: Consider calling
+////                ActivityCompat#requestPermissions
+////             here to request the missing permissions, and then overriding
+//
+////               public void onRequestPermissionsResult(int requestCode, String[] permissions,
+////                                                      int[] grantResults)
+////                {
+////
+////                 }
+////             to handle the case where the user grants the permission. See the documentation
+////             for ActivityCompat#requestPermissions for more details.
+//            LocationManager lm = (LocationManager) getContext().getSystemService(LOCATION_SERVICE);
+//            Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+//            lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 10, locationListener);
+//
+
+//        }
+//
         gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
             @Override
@@ -97,18 +273,41 @@ public class BrowsingFragment extends Fragment {
             }
         });
 
+        BrowsingActivity.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                if (tab.getPosition() == 0)
+                {
+                    onResume();
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
 
         // here to detect if the user reached the end of the gridView.
         geoFireDatabaseRef = FirebaseDatabase.getInstance().getReference().child("items-location");
         finalItems = new ArrayList<String>();
         itemKeys = new ArrayList<String>();
+        itemLocations = new ArrayList<GeoLocation>();
+
 
         geoFire = new GeoFire(geoFireDatabaseRef);
         displayMetrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         loadingAnimationView = (LottieAnimationView) view.findViewById(R.id.loadingAnimationView);
         noItemsAnimationView = (LottieAnimationView) view.findViewById(R.id.noItemsAnimationView);
-        locationAnimationView = (LottieAnimationView) view.findViewById(R.id.locationAnimationView);
+
         animationDescriptionTextView = (TextView) view.findViewById(R.id.animationDescriptionTextView);
         locationAnimationView.setVisibility(View.GONE);
         noItemsAnimationView.setVisibility(View.GONE);
@@ -117,6 +316,7 @@ public class BrowsingFragment extends Fragment {
         maximumRadius = 50;
         radius = 5;
         playLoadingAnimation();
+
 
        // gridView.setOnScrollListener(new AbsListView.OnScrollListener(){
            // @Override
@@ -140,15 +340,19 @@ public class BrowsingFragment extends Fragment {
          //   }
         //});
 
-
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 BrowsingItemActivity.itemId = finalItems.get(position);
+                BrowsingItemActivity.currentLat = latitude;
+                BrowsingItemActivity.currentLong = longitude;
+
                 intentToItem();
             }});
 
-        getItems();
+
+        checkLocationPermission();
+
         return view;
     }
 
@@ -187,8 +391,10 @@ public class BrowsingFragment extends Fragment {
                 maximumRadius = 50;
             }
 
-            getItems();
+             getItems();
+
         }
+
     }
 
     public void clearSearch()
@@ -196,11 +402,14 @@ public class BrowsingFragment extends Fragment {
         stopNoItemsAnimation();
         animationDescriptionTextView.setVisibility(View.GONE);
         queryChanged = true;
+        gridView.setAdapter(new BrowsingImageAdapter(getActivity(), new ArrayList<String>(), displayMetrics.heightPixels, displayMetrics.widthPixels));
+        searchButtonClicked = false;
         playLoadingAnimation();
         initializeItems();
         getItems();
     }
 
+    
     public void onSearchButtonClicked(String query)
     {
         noItemsAnimationView.setVisibility(View.GONE);
@@ -209,23 +418,29 @@ public class BrowsingFragment extends Fragment {
         // make the gridView empty
         gridView.setAdapter(new BrowsingImageAdapter(getActivity(), new ArrayList<String>(), displayMetrics.heightPixels, displayMetrics.widthPixels));
         String[] words = query.split(" ");
+        searchKeys = new ArrayList<String>();
         searchKeys.addAll(Arrays.asList(words));
         searchButtonClicked = true;
+        BrowsingSettingsActivity.categoriesSettings =  new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         itemKeys = new ArrayList<String>();
+        itemLocations = new ArrayList<GeoLocation>();
         initializeItems();
         playLoadingAnimation();
         getItems();
+
     }
 
     private void getItems()
     {
         // TODO add the current location
-        final GeoQuery geoQuery = geoFire.queryAtLocation(new GeoLocation(37.785834, -122.406417), radius);
+        final GeoQuery geoQuery = geoFire.queryAtLocation(new GeoLocation(latitude, longitude), radius);
         geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
             @Override
             public void onKeyEntered(String key, GeoLocation location) {
 
                 itemKeys.add(key);
+                itemLocations.add(location);
+
             }
 
             @Override
@@ -261,6 +476,7 @@ public class BrowsingFragment extends Fragment {
                 {
                     radius = radius + 10;
                     itemKeys = new ArrayList<String>();
+                    itemLocations = new ArrayList<GeoLocation>();
                     getItems();
                 }
 
@@ -279,7 +495,6 @@ public class BrowsingFragment extends Fragment {
                     uncommonArray = new ArrayList<String>(CollectionUtils.subtract(itemKeys, finalItems));
                     fetchGeofireDataToDictionary();
                     geoQuery.removeAllListeners();
-
                 }
             }
             @Override
@@ -294,7 +509,9 @@ public class BrowsingFragment extends Fragment {
     private void initializeItems()
     {
         itemKeys = new ArrayList<String>();
+        itemLocations = new ArrayList<GeoLocation>();
         finalItems = new ArrayList<String>();
+        finalLocationItems = new ArrayList<GeoLocation>();
         radius = 5;
         currentItemsCount = 0;
         carCategoryArray = new ArrayList<String>();
@@ -586,17 +803,19 @@ public class BrowsingFragment extends Fragment {
         {
             if(checkIfAtLeastOneChecked == true)
             {
-
                 if(radius>maximumRadius&&finalItems.size() == 0)
                 {
                     finalItems = tempArray;
                     initializeNoItemAvailable();
                     stopLocationAnimation();
+                    stopLoadingAnimation();
                     gridView.setAdapter(new BrowsingImageAdapter(getActivity(), finalItems, displayMetrics.heightPixels, displayMetrics.widthPixels));
                     gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         public void onItemClick(AdapterView<?> parent, View v,
                       int position, long id) {
                     BrowsingItemActivity.itemId = finalItems.get(position);
+                    BrowsingItemActivity.currentLat = latitude;
+                    BrowsingItemActivity.currentLong = longitude;
                     intentToItem();
 
                      }});
@@ -624,6 +843,7 @@ public class BrowsingFragment extends Fragment {
         {
             radius = radius + 10;
             itemKeys = new ArrayList<String>();
+            itemLocations = new ArrayList<GeoLocation>();
             getItems();
         }
 
@@ -740,11 +960,14 @@ public class BrowsingFragment extends Fragment {
                     finalItems = tempArray;
                     initializeNoItemAvailable();
                     stopLocationAnimation();
+                    stopLoadingAnimation();
                     gridView.setAdapter(new BrowsingImageAdapter(getActivity(), finalItems, displayMetrics.heightPixels, displayMetrics.widthPixels));
                     gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         public void onItemClick(AdapterView<?> parent, View v,
                                                 int position, long id) {
                             BrowsingItemActivity.itemId = finalItems.get(position);
+                            BrowsingItemActivity.currentLat = latitude;
+                            BrowsingItemActivity.currentLong = longitude;
                             intentToItem();
                         }});
 
@@ -772,6 +995,7 @@ public class BrowsingFragment extends Fragment {
         {
             radius = radius + 10;
             itemKeys = new ArrayList<String>();
+            itemLocations = new ArrayList<GeoLocation>();
             getItems();
         }
 
@@ -887,11 +1111,14 @@ public class BrowsingFragment extends Fragment {
                     finalItems = tempArray;
                     initializeNoItemAvailable();
                     stopLocationAnimation();
+                    stopLoadingAnimation();
                     gridView.setAdapter(new BrowsingImageAdapter(getActivity(), finalItems, displayMetrics.heightPixels, displayMetrics.widthPixels));
                     gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         public void onItemClick(AdapterView<?> parent, View v,
                                                 int position, long id) {
                             BrowsingItemActivity.itemId = finalItems.get(position);
+                            BrowsingItemActivity.currentLat = latitude;
+                            BrowsingItemActivity.currentLong = longitude;
                             intentToItem();
                         }});
 
@@ -918,6 +1145,7 @@ public class BrowsingFragment extends Fragment {
         {
             radius = radius + 10;
             itemKeys = new ArrayList<String>();
+            itemLocations = new ArrayList<GeoLocation>();
             getItems();
         }
 
@@ -1035,6 +1263,7 @@ public class BrowsingFragment extends Fragment {
                     finalItems = tempArray;
                     initializeNoItemAvailable();
                     stopLocationAnimation();
+                    stopLoadingAnimation();
                     gridView.setAdapter(new BrowsingImageAdapter(getActivity(), finalItems, displayMetrics.heightPixels, displayMetrics.widthPixels));
 
                     BrowsingFragment.queryChanged = false;
@@ -1061,8 +1290,10 @@ public class BrowsingFragment extends Fragment {
         {
             radius = radius + 10;
             itemKeys = new ArrayList<String>();
+            itemLocations = new ArrayList<GeoLocation>();
             getItems();
         }
+
 
         else
         {
@@ -1078,6 +1309,8 @@ public class BrowsingFragment extends Fragment {
                     public void onItemClick(AdapterView<?> parent, View v,
                                             int position, long id) {
                         BrowsingItemActivity.itemId = finalItems.get(position);
+                        BrowsingItemActivity.currentLat = latitude;
+                        BrowsingItemActivity.currentLong = longitude;
                         intentToItem();
                     }});
 
@@ -1111,7 +1344,6 @@ public class BrowsingFragment extends Fragment {
                     {
                         String childKey = item.getKey();
                         keys.add(childKey);
-
                     }
 
                     if(counter == 0)
@@ -1122,7 +1354,6 @@ public class BrowsingFragment extends Fragment {
                     else
                     {
                         fetchedKeys.retainAll(keys);
-
                     }
 
                     if(counter == searchKeys.size() - 1)
@@ -1137,10 +1368,10 @@ public class BrowsingFragment extends Fragment {
                                 {
                                     radius = radius + 10;
                                     itemKeys = new ArrayList<String>();
+                                    itemLocations = new ArrayList<GeoLocation>();
                                     currentItemsCount = finalItems.size();
                                     getItems();
                                 }
-
                                 else{
 
                                     if(finalItems.size() == 0)
@@ -1148,8 +1379,9 @@ public class BrowsingFragment extends Fragment {
                                         currentItemsCount = 0;
                                         initializeNoItemAvailable();
                                         stopLoadingAnimation();
+                                        gridView.setAdapter(new BrowsingImageAdapter(getActivity(), finalItems, displayMetrics.heightPixels, displayMetrics.widthPixels));
                                         queryChanged = false;
-                                        searchButtonClicked = false;
+                                        //searchButtonClicked = false;
                                     }
 
                                     else
@@ -1158,16 +1390,13 @@ public class BrowsingFragment extends Fragment {
                                         gridView.setAdapter(new BrowsingImageAdapter(getActivity(), finalItems, displayMetrics.heightPixels, displayMetrics.widthPixels));
                                         if (queryChanged == true)
                                         {
-
                                             gridView.setSelection(0);
                                             queryChanged = false;
-
                                         }
 
                                         stopLoadingAnimation();
-                                        searchButtonClicked = false;
+                                       // searchButtonClicked = false;
                                     }
-
                                 }
                             }
 
@@ -1180,16 +1409,13 @@ public class BrowsingFragment extends Fragment {
                                 {
                                     gridView.setSelection(0);
                                     queryChanged = false;
-
                                 }
 
                                 stopLoadingAnimation();
-                                searchButtonClicked = false;
+                                //searchButtonClicked = false;
                             }
                         }
                     }
-
-
                 }
 
                 @Override
@@ -1209,6 +1435,7 @@ public class BrowsingFragment extends Fragment {
         // should do something related to the listview here
         animationDescriptionTextView.setVisibility(View.VISIBLE);
         playNoItemsAnimation();
+
     }
 
     private  void intentToItem()
@@ -1252,9 +1479,78 @@ public class BrowsingFragment extends Fragment {
     }
 
 
+
     private void stopLocationAnimation()
     {
-        locationAnimationView.cancelAnimation();
+       locationAnimationView.cancelAnimation();
         locationAnimationView.setVisibility(View.GONE);
     }
+
+
+    public boolean checkLocationPermission() {
+
+        if (ContextCompat.checkSelfPermission(getActivity(),
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Should we show an explanation?
+            if (shouldShowRequestPermissionRationale(
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+                new AlertDialog.Builder(getContext())
+                        .setTitle("تفعيل خدمة المواقع")
+                        .setMessage("نود استخدام خدمة المواقع خاصتك حتي نعرض لك المنتجات الاقرب لك!")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                //Prompt the user once explanation has been shown
+                                requestPermissions(
+                                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                                        MY_PERMISSIONS_REQUEST_LOCATION);
+                            }
+                        })
+                        .create()
+                        .show();
+            } else {
+
+                // No explanation needed, we can request the permission.
+                requestPermissions(
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_LOCATION);
+            }
+
+            return false;
+        }
+
+        else {
+
+            String locationProvider = LocationManager.NETWORK_PROVIDER;
+            Location lastKnownLocation = mLocationManager.getLastKnownLocation(locationProvider);
+
+            if (lastKnownLocation == null)
+            {
+                noLocationAvailableTextView.setVisibility(View.VISIBLE);
+                playLocationAnimation();
+                stopLoadingAnimation();
+            }
+
+            else {
+
+                stopLocationAnimation();
+                noLocationAvailableTextView.setVisibility(View.GONE);
+                enableLocationButton.setVisibility(View.GONE);
+                longitude = lastKnownLocation.getLongitude();
+                locationEnabled = true;
+                latitude = lastKnownLocation.getLatitude();
+                getItems();
+            }
+
+            return true;
+        }
+    }
+
+
 }

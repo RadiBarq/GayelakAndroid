@@ -11,6 +11,8 @@ import android.widget.Toast;
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ProfileSettingsChangeUserName extends AppCompatActivity {
@@ -28,6 +30,7 @@ public class ProfileSettingsChangeUserName extends AppCompatActivity {
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setElevation(0);
         }
 
         loadingAnimationView = (LottieAnimationView) findViewById(R.id.loadingAnimationView);
@@ -78,6 +81,10 @@ public class ProfileSettingsChangeUserName extends AppCompatActivity {
                         Toast.makeText(ProfileSettingsChangeUserName.this, "تم تفير اسم المستخدم بنجاح", Toast.LENGTH_LONG).show();
                         stopLoadingAnimation();
                         LoginActivity.user.UserName = userName.getText().toString();
+
+                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(userName.getText().toString()).build();
+                        FirebaseAuth.getInstance().getCurrentUser().updateProfile(profileUpdates);
                         onBackPressed();
 
                     } else {

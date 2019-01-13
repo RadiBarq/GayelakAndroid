@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/show_item"
+        android:orderInCategory="100"
+        android:title="عرض المنتج"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/safety_tips"
+        android:orderInCategory="200"
+        android:title="تعليمات السلامة"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/block_user"
+        android:orderInCategory="300"
+        android:title="حذر المستخدم"
+        app:showAsAction="never" />
+
+    <item
+    android:id="@+id/remove_chat"
+    android:orderInCategory="400"
+    android:title="حذف المحادثة"
+    app:showAsAction="never" />
+
+    <item
+        android:id="@+id/report_user"
+        android:orderInCategory="500"
+        android:title="التبليغ عن المستخدم"
+        app:showAsAction="never" />
+
+</menu>

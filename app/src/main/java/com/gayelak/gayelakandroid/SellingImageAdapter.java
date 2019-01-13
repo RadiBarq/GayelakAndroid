@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,12 +63,13 @@ public class SellingImageAdapter extends BaseAdapter {
 
         View view;
         view = mInflater.inflate(R.layout.layout_browsing_image_adapter,parent,false);
-        view.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT,  (int) (screenHeight/3.5)));
+        view.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT,  (int) (screenHeight/2.5)));
         ImageView imageView = view.findViewById(R.id.imageView);
+        imageView.setBackgroundColor(Color.parseColor("#eef0f5"));
         StorageReference imageStorageRef = FirebaseStorage.getInstance().getReference().child("Items_Photos").child(itemsKeys.get(position)).child("1.jpeg");
         Glide.with(mContext)
                 .using(new FirebaseImageLoader())
-                .load(imageStorageRef).animate(android.R.anim.fade_in).thumbnail(Glide.with(mContext).load(R.drawable.spinner_gif)).crossFade()
+                .load(imageStorageRef)
                 .into(imageView);
         return view;
 

@@ -1,11 +1,11 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionMenuTextAppearance">@style/browsing_settings_menu_text_style</item>
     </style>
 
     <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
@@ -20,10 +20,24 @@
         <item name="colorAccent">#2A7AFF</item>
     </style>
 
+    <style name="AppThemeNoActionBarChat" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
     <style name = "AppThemePostItem" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name = "AppThemeChat" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="actionMenuTextColor">#ffffff</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -36,6 +50,20 @@
 
     <style name="ProfileCustomTabText" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="browsing_settings_menu_text_style" parent="AppTheme">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name= "WelcomeActivityTheme" parent="AppTheme.NoActionBar">
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name =  "android:windowBackground">@drawable/lunch_screen</item>
+
     </style>
 
 </resources>

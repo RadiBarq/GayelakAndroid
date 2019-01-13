@@ -14,7 +14,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/loadingAnimationView"

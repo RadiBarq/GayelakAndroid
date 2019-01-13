@@ -11,5 +11,8 @@ public class Constants {
     final static String noItemsAvailableText = "لم نتمكن من ايجاد نتائج بالقرب منك، حاول البحث عن شيئ اخر او حاول في وقت لاحق!";
     final static String enableLocationText = "الرجاء تفعيل خدمة المواقع لتتمكن من استعمال جايلك!";
     final static String enableNotificationsText = "الرجاء تفعيل الاشعارات من الاعدادات!";
+    final static String lightGray = "#eef0f5";
+    final static String darkGray = "#74798d";
+
 
 }

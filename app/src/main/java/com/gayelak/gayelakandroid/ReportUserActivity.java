@@ -32,7 +32,7 @@ public class ReportUserActivity extends AppCompatActivity {
         gridView = findViewById(R.id.gridView);
         descriptionEditText = findViewById(R.id.descriptionEditText);
         loadingAnimationView = (LottieAnimationView) findViewById(R.id.loadingAnimationView);
-
+        getSupportActionBar().setElevation(0);
         final ReportUserGridViewAdapter reportUserGridViewAdapter = new ReportUserGridViewAdapter(this);
         gridView.setAdapter(reportUserGridViewAdapter);
 

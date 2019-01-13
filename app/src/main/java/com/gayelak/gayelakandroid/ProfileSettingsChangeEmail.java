@@ -30,6 +30,7 @@ public class ProfileSettingsChangeEmail extends AppCompatActivity {
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setElevation(0);
         }
 
         emailEdiText = (EditText) findViewById(R.id.passwordText);

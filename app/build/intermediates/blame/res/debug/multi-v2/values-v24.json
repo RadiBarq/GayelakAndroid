@@ -4,7 +4,7 @@
             "outputFile": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c34e6d1888a520de051cf201cce3e0b3/res/values-v24/values-v24.xml",
+                    "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/e6271e55c4ec611ea1450eafd352ce61/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/values-v24/values-v24.xml",
+                    "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/3509c4c7a474bf13a260b32ca340d249/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

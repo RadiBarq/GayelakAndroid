@@ -16,14 +16,16 @@ import android.widget.TextView;
 public class CategoriesGridViewAdapter extends BaseAdapter {
 
     private Context mContext;
-
     private  LayoutInflater mInflater;
+    double screenWidth;
+    double screenHeight;
 
-
-    public CategoriesGridViewAdapter(Context c)
+    public CategoriesGridViewAdapter(Context c, double screenHeight, double screenWidth)
     {
         mContext = c;
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.screenWidth = screenWidth;
+        this.screenHeight = screenHeight;
 
     }
 
@@ -47,7 +49,7 @@ public class CategoriesGridViewAdapter extends BaseAdapter {
 
         View view;
         view = mInflater.inflate(R.layout.browsing_category_layout, parent, false);
-        view.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 600));
+        view.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT,  (int) (screenHeight/3.5)));
         TextView textView = (TextView) view.findViewById(R.id.userName);
         ImageView imageView = (ImageView) view.findViewById(R.id.image);
         textView.setText(textArray[position]);

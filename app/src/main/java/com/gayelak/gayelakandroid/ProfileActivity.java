@@ -3,6 +3,7 @@ package com.gayelak.gayelakandroid;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.provider.MediaStore;
 import android.renderscript.Sampler;
 import android.support.annotation.Nullable;
@@ -78,9 +79,10 @@ public class ProfileActivity extends AppCompatActivity {
 
         userNameTextView.setText(userName);
         profileImaegRef = profileImaegRef.child("Profile_Pictures").child(userId).child("Profile.jpg");
+        profileImage.setBackgroundColor(Color.WHITE);
         Glide.with(this /* context */)
                 .using(new FirebaseImageLoader())
-                .load(profileImaegRef).animate(android.R.anim.fade_in).thumbnail(Glide.with(this).load(R.drawable.spinner_gif)).crossFade().diskCacheStrategy(DiskCacheStrategy.NONE)
+                .load(profileImaegRef)
                 .skipMemoryCache(true)
                 .into(profileImage);
 
@@ -89,6 +91,7 @@ public class ProfileActivity extends AppCompatActivity {
             // here all the work also
 
         }
+
         else {
 
             //TODO coming from other profile my lord.
@@ -139,9 +142,63 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
+    private void blockUser(String itemUserId, String itemUserName)
+    {
+        ValueEventListener deleteCurrentUserListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot message: dataSnapshot.getChildren())
+                {
+                    String blockedUserKey =  (String) message.child("user-id").getValue();
+
+                    if (blockedUserKey.matches(itemUserId))
+                    {
+                        String messageKey = message.getKey();
+                        FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(messageKey).removeValue();
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e(databaseError.getMessage(),  databaseError.getDetails());
+            }
+        };
+
+
+        ValueEventListener deleteOtherUserListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot message: dataSnapshot.getChildren())
+                {
+                    String blockedUserKey =  (String) message.child("user-id").getValue();
+
+                    if (blockedUserKey.matches(LoginActivity.user.UserId))
+                    {
+                        String messageKey = message.getKey();
+                        FirebaseDatabase.getInstance().getReference().child("Users").child(itemUserId).child("chat").child(messageKey).removeValue();
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").addListenerForSingleValueEvent(deleteCurrentUserListener);
+        FirebaseDatabase.getInstance().getReference().child("Users").child(itemUserId).child("chat").addListenerForSingleValueEvent(deleteOtherUserListener);
+        FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("block").child(itemUserId).setValue(itemUserName);
+    }
+
+
     public void onClickSettings(View view)
     {
-
         if (isItOwnerProfile == true)
         {
             Intent settingsIntent = new Intent(ProfileActivity.this, ProfileSettingsActivity.class);
@@ -195,11 +252,9 @@ public class ProfileActivity extends AppCompatActivity {
                                 // The 'which' argument contains the index position
                                 // of the selected item
                                // PostItemActivity.clickedItem = position;
-
                                 if (which == 0)
                                 {
-                                    //remove block from user
-                                    FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("block").child(userId).setValue(userName);
+                                    blockUser(userId, userName);
                                 }
 
                                 else
@@ -221,7 +276,6 @@ public class ProfileActivity extends AppCompatActivity {
                 public void onCancelled(DatabaseError databaseError) {
 
                     Toast.makeText(ProfileActivity.this, databaseError.getMessage(), Toast.LENGTH_LONG).show();
-
                 }
             };
 
@@ -229,4 +283,5 @@ public class ProfileActivity extends AppCompatActivity {
            checkBlockRef.addListenerForSingleValueEvent(checkBlockListener);
         }
     }
+
 }

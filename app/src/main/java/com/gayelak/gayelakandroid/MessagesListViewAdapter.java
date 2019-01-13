@@ -2,6 +2,8 @@ package com.gayelak.gayelakandroid;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.annotation.ColorRes;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,12 +52,18 @@ public class MessagesListViewAdapter extends BaseAdapter {
     LayoutInflater mLayoutInflater;
     double screenHeight;
     DatabaseReference messagesRef;
-    static ArrayList<String> usersKeys;
-    static ArrayList<String> usersNames;
-    ArrayList<LastMessage> lastMessages;
+    static ArrayList<String> messagesKeys;
+    static HashMap<String, String> usersNames;
+   // static ArrayList<String> usersKeys;
+   // static ArrayList<String> itemsKeys;
+    //ArrayList<LastMessage> lastMessages;
     private HashMap <String, LastMessage> keyLastMessage;
+    static HashMap<String, String> keyUsersKeys;
+    static HashMap<String, String> keyItemsKeys;
     private LottieAnimationView loadingAnimationView;
     private Map<String, Double> sortedMessages;
+    int recentCounter;
+    public static boolean messagesChanged;
 
     MessagesListViewAdapter(Context context, double screenHeight, LottieAnimationView loadingAnimationView) {
 
@@ -63,18 +71,25 @@ public class MessagesListViewAdapter extends BaseAdapter {
         mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.screenHeight = screenHeight;
         messagesRef = FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat");
-        usersKeys = new ArrayList<String>();
-        lastMessages = new ArrayList<LastMessage>();
+        messagesKeys = new ArrayList<String>();
+       // lastMessages = new ArrayList<LastMessage>();
         sortedMessages = new HashMap<String, Double>();
         keyLastMessage = new HashMap<String, LastMessage>();
-        usersNames = new ArrayList<String>();
+        //usersKeys = new ArrayList<String>();
+        usersNames = new HashMap<String, String>();
+        //itemsKeys = new ArrayList<String>();
+        keyItemsKeys = new HashMap<String, String>();
+        keyUsersKeys = new HashMap<String, String>();
+        recentCounter = 0;
         this.loadingAnimationView = loadingAnimationView;
+        loadingAnimationView.setVisibility(View.GONE);
         getMessages();
     }
 
     @Override
     public int getCount() {
-        return usersKeys.size();
+
+        return messagesKeys.size();
     }
 
     @Override
@@ -84,11 +99,14 @@ public class MessagesListViewAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
+
         return position;
+
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         View view;
         view = mLayoutInflater.inflate(R.layout.messages_list_view_layout, parent, false);
         ViewGroup.LayoutParams params = view.getLayoutParams();
@@ -98,48 +116,35 @@ public class MessagesListViewAdapter extends BaseAdapter {
         final TextView lastMessageTextField = (TextView) view.findViewById(R.id.lasMessage);
         final TextView dateTextViewTextField = (TextView) view.findViewById(R.id.dateTextView);
         final ImageView profileImageView = (ImageView) view.findViewById(R.id.imageView);
-        final String userKey = usersKeys.get(position);
-        final LastMessage lastMessage = lastMessages.get(position);
+        final String messageKey = messagesKeys.get(position);
+        final String userKey = keyUsersKeys.get(messageKey);
+        final String userName = usersNames.get(messageKey);
+        final String itemkey = keyItemsKeys.get(messageKey);
+        final LastMessage lastMessage = keyLastMessage.get(messageKey);
         final int currentPoisition = position;
 
-        ValueEventListener userNameListener = new ValueEventListener() {
 
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+        StorageReference contactImageRef = FirebaseStorage.getInstance().getReference().child("Profile_Pictures").child(userKey).child("Profile.jpg");
+        Glide.with(mContext)
+                .using(new FirebaseImageLoader())
+                .load(contactImageRef).animate(android.R.anim.fade_in).thumbnail(Glide.with(mContext).load(R.drawable.spinner_gif)).crossFade()
+                .into(profileImageView);
+        contactNameTextField.setText(userName);
+        //usersNames.add(userName);
+        lastMessageTextField.setText(lastMessage.message);
+        String date = getDateCurrentTimeZone(lastMessage.time);
+        dateTextViewTextField.setText(date);
 
-                String userName = dataSnapshot.getValue().toString();
-                StorageReference contactImageRef = FirebaseStorage.getInstance().getReference().child("Profile_Pictures").child(userKey).child("Profile.jpg");
-                Glide.with(mContext)
-                        .using(new FirebaseImageLoader())
-                        .load(contactImageRef).animate(android.R.anim.fade_in).thumbnail(Glide.with(mContext).load(R.drawable.spinner_gif)).crossFade()
-                        .into(profileImageView);
-                contactNameTextField.setText(userName);
-                usersNames.add(userName);
-                lastMessageTextField.setText(lastMessage.message);
-                String date = getDateCurrentTimeZone(lastMessage.time);
-                dateTextViewTextField.setText(date);
+        if (lastMessage.recent.matches("true"))
+        {
+            lastMessageTextField.setTextColor(Color.parseColor("#000000"));
+            dateTextViewTextField.setTextColor(Color.parseColor("#000000"));
+            recentCounter++;
+        }
 
-                if (lastMessage.recent.matches("true"))
-                {
-                    lastMessageTextField.setTextColor(Color.parseColor("#000000"));
-                }
-
-                if (currentPoisition == usersKeys.size() - 1)
-                {
-                    stopLoadingAnimation();
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Toast.makeText(mContext, databaseError.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        };
-
-        FirebaseDatabase.getInstance().getReference().child("Users").child(userKey).child("UserName").addListenerForSingleValueEvent(userNameListener);
         return view;
     }
+
 
     private void getMessages() {
 
@@ -148,34 +153,51 @@ public class MessagesListViewAdapter extends BaseAdapter {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
-                playLoadingAnimation();
-                usersKeys = new ArrayList<String>();
-                usersNames = new ArrayList<String>();
-                lastMessages = new ArrayList<LastMessage>();
+              //  playLoadingAnimation();
+                messagesKeys = new ArrayList<String>();
+                usersNames = new HashMap<String, String>();
                 sortedMessages = new HashMap<String, Double>();
                 keyLastMessage = new HashMap<String, LastMessage>();
+                keyUsersKeys = new HashMap<String, String>();
+                //usersKeys = new ArrayList<String>();
+              //  itemsKeys = new ArrayList<String>();
+                keyItemsKeys = new HashMap<String, String>();
+                recentCounter = 0;
+                messagesChanged = true;
 
                 for (DataSnapshot message : dataSnapshot.getChildren()) {
 
                     String key = message.getKey();
-                    LastMessage lasMessage = message.child("lastMessage").getValue(LastMessage.class);
-                   // usersKeys.add(key);
-                    //lastMessages.add(lasMessage);
-                    keyLastMessage.put(key, lasMessage);
-                    sortedMessages.put(key, lasMessage.time);
+                    LastMessage lastMessage = message.child("lastMessage").getValue(LastMessage.class);
+                    String userKey = (String) message.child("user-id").getValue();
+                    String itemKey = (String) message.child("item-id").getValue();
+                    String userName = (String) message.child("user-name").getValue();
+
+                    // this is because we update the messages then the lastMessage so it may be nul
+                    if (lastMessage == null || userKey == null || itemKey == null || userName == null)
+                    {
+                        messagesKeys = new ArrayList<String>();
+                        MessagesListViewAdapter.this.notifyDataSetChanged();
+                        return;
+                    }
+
+                    keyLastMessage.put(key, lastMessage);
+                    sortedMessages.put(key, lastMessage.time);
+                    keyItemsKeys.put(key, itemKey);
+                    keyUsersKeys.put(key, userKey);
+                    usersNames.put(key, userName);
                 }
 
                 if (sortedMessages.size() == 0)
                 {
-                    stopLoadingAnimation();
                     MessagesListViewAdapter.this.notifyDataSetChanged();
-
                 }
 
                 else {
 
                     sortedMessages = sortByValue(sortedMessages);
                     addMessagesFromMapToTheArray(sortedMessages);
+                    getRecentCounter();
                     MessagesListViewAdapter.this.notifyDataSetChanged();
                 }
             }
@@ -203,9 +225,41 @@ public class MessagesListViewAdapter extends BaseAdapter {
 
         }catch (Exception e) {
 
+            Log.e(e.getMessage(), e.getLocalizedMessage());
+
         }
 
         return "";
+    }
+
+    private void getRecentCounter()
+    {
+        for (int i = 0; i < messagesKeys.size(); i++)
+        {
+            final String userKey = messagesKeys.get(i);
+            String clickedMessageKey = MessagesListViewAdapter.messagesKeys.get(i);
+            final LastMessage lastMessage = keyLastMessage.get(clickedMessageKey);
+
+            if (lastMessage.recent.matches("true"))
+            {
+                recentCounter++;
+            }
+
+            if (i == messagesKeys.size() - 1)
+            {
+                if (BrowsingActivity.tabLayout.getSelectedTabPosition() != 2 && recentCounter > 0)
+                {
+                    BrowsingActivity.messagesBadge.setVisibility(View.VISIBLE);
+                    BrowsingActivity.messagesBadge.setText(String.valueOf(recentCounter));
+                }
+
+                else {
+
+                    BrowsingActivity.messagesBadge.setVisibility(View.GONE);
+
+                }
+            }
+        }
     }
 
     private void playLoadingAnimation()
@@ -243,6 +297,7 @@ public class MessagesListViewAdapter extends BaseAdapter {
             sortedMap.put(entry.getKey(), entry.getValue());
         }
 
+
         /*
         //classic iterator example
         for (Iterator<Map.Entry<String, Integer>> it = list.iterator(); it.hasNext(); ) {
@@ -256,8 +311,11 @@ public class MessagesListViewAdapter extends BaseAdapter {
     public  <K, V> void addMessagesFromMapToTheArray(Map<K, V> map) {
         for (Map.Entry<K, V> entry : map.entrySet()) {
 
-                   usersKeys.add(entry.getKey().toString());
-                   lastMessages.add(keyLastMessage.get(entry.getKey().toString()));
+                   messagesKeys.add(entry.getKey().toString());
+                //   lastMessages.add(keyLastMessage.get(entry.getKey().toString()));
+                  // usersKeys.add(keyUsersKeys.get(entry.getKey().toString()));
+                  // itemsKeys.add(keyItemsKeys.get(entry.getKey().toString()));
+
         }
     }
 

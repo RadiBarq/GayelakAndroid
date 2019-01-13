@@ -4,7 +4,7 @@
             "outputFile": "/Users/radibarq/developer/GayelakAndroid/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/a0f5805009961444302607ad8d21d1ea/res/values-v23/values-v23.xml",
+                    "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/3509c4c7a474bf13a260b32ca340d249/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/118114fdf1a1c69557f5a0d86d635b1d/res/values-v23/values-v23.xml",
+                    "source": "/Users/radibarq/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/60dcf3f430a99f2309d6bfd1cb71bffd/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

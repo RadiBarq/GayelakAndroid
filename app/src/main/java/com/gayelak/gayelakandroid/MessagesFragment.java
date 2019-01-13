@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,22 +52,24 @@ public class MessagesFragment extends Fragment {
                 builder.setTitle("الرسائل").setItems(userOperations,new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
-                        String clickedUserKey = MessagesListViewAdapter.usersKeys.get(position);
-                        String userName = MessagesListViewAdapter.usersNames.get(position);
+                        String clickedMessageKey = MessagesListViewAdapter.messagesKeys.get(position);
+                        String clickedUserKey = MessagesListViewAdapter.keyUsersKeys.get(clickedMessageKey);
+                        String userName = MessagesListViewAdapter.usersNames.get(clickedMessageKey);
+
                         // The 'which' argument contains the index position
                         // of the selected item
                         if (which == 0)
                         {
                             //block user
-                            FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(clickedUserKey).removeValue();
-                            FirebaseDatabase.getInstance().getReference().child("Users").child(clickedUserKey).child("chat").child(LoginActivity.user.UserId).removeValue();
-                            FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("block").child(clickedUserKey).setValue(userName);
+                            blockUser(clickedUserKey, userName);
+
+
                         }
 
                         else if (which == 1)
                         {
                             //delete user here to delete the user
-                            FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(clickedUserKey).removeValue();
+                            FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(clickedMessageKey).removeValue();
 
                         }
 
@@ -90,7 +93,9 @@ public class MessagesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                final String clickedUserId = MessagesListViewAdapter.usersKeys.get(position);
+                String clickedMessageKey = MessagesListViewAdapter.messagesKeys.get(position);
+                final String clickedUserId = MessagesListViewAdapter.keyUsersKeys.get(clickedMessageKey);
+                final String clickedItemId = MessagesListViewAdapter.keyItemsKeys.get(clickedMessageKey);
 
                 ValueEventListener postListener = new ValueEventListener() {
                     @Override
@@ -100,6 +105,7 @@ public class MessagesFragment extends Fragment {
                         ChatActivity.itemUserId = clickedUserId;
                         ChatActivity.itemUserName = userName;
                         ChatActivity.cameFromMessages = true;
+                        ChatActivity.itemId = clickedItemId;
                         Intent intent = new Intent(getActivity(), ChatActivity.class);
                         startActivity(intent);
                     }
@@ -116,5 +122,58 @@ public class MessagesFragment extends Fragment {
         });
         
         return view;
+    }
+
+    private void blockUser(String itemUserId, String itemUserName)
+    {
+        ValueEventListener deleteCurrentUserListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot message: dataSnapshot.getChildren())
+                {
+                    String blockedUserKey =  (String) message.child("user-id").getValue();
+
+                    if (blockedUserKey.matches(itemUserId))
+                    {
+                        String messageKey = message.getKey();
+                        FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").child(messageKey).removeValue();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e(databaseError.getMessage(),  databaseError.getDetails());
+            }
+        };
+
+
+        ValueEventListener deleteOtherUserListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot message: dataSnapshot.getChildren())
+                {
+                    String blockedUserKey =  (String) message.child("user-id").getValue();
+
+                    if (blockedUserKey.matches(LoginActivity.user.UserId))
+                    {
+                        String messageKey = message.getKey();
+                        FirebaseDatabase.getInstance().getReference().child("Users").child(itemUserId).child("chat").child(messageKey).removeValue();
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("chat").addListenerForSingleValueEvent(deleteCurrentUserListener);
+        FirebaseDatabase.getInstance().getReference().child("Users").child(itemUserId).child("chat").addListenerForSingleValueEvent(deleteOtherUserListener);
+        FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("block").child(itemUserId).setValue(itemUserName);
     }
 }

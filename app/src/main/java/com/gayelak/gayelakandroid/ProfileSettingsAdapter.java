@@ -1,16 +1,20 @@
 package com.gayelak.gayelakandroid;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -112,12 +116,26 @@ public class ProfileSettingsAdapter extends BaseAdapter {
         } else {
 
             view = mInflater.inflate(R.layout.profile_settings_button_layout, parent, false);
+            Button button = (Button) view.findViewById(R.id.button);
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    //logout button should be empty like that.
+                    Intent i = mContext.getPackageManager()
+                            .getLaunchIntentForPackage( mContext.getApplicationContext().getPackageName());
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    mContext.startActivity(i);
+                    FirebaseAuth.getInstance().signOut();
+                }
+            });
         }
 
         ViewGroup.LayoutParams params = view.getLayoutParams();
         params.height = (int) (screenHeight / 11);
         view.setLayoutParams(params);
-
         return view;
+
     }
 }

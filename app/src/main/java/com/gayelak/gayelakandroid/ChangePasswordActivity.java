@@ -32,6 +32,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setElevation(0);
         }
 
         passwordEditText = (EditText) findViewById(R.id.passwordText);

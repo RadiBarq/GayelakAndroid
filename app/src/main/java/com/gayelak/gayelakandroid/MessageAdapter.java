@@ -30,11 +30,12 @@ public class MessageAdapter extends BaseAdapter   {
 
     @Override
     public int getCount() {
-        return messages.size() - 1;
+        return messages.size();
     }
 
     public void addMessage(HashMap<String, String> message)
     {
+
         messages.add(message);
     }
 
@@ -56,10 +57,9 @@ public class MessageAdapter extends BaseAdapter   {
         String messageText = messages.get(i).get("messageText");
         String messageFrom= messages.get(i).get("messageFrom");
 
-
         int res = 0;
 
-        if (messageFrom.matches(LoginActivity.user.UserName))
+        if (messageFrom.matches(LoginActivity.user.UserId))
         {
             res = R.layout.message;
         }
@@ -74,11 +74,11 @@ public class MessageAdapter extends BaseAdapter   {
         TextView txtMessage = (TextView) convertView.findViewById(R.id.message_text);
         txtMessage.setText(messageText);
 
-        if (!messageFrom.matches(LoginActivity.user.UserName))
-        {
-            TextView txtFrom = (TextView) convertView.findViewById(R.id.message_user);
-            txtFrom.setText(messageFrom);
-        }
+      //  if (!messageFrom.matches(LoginActivity.user.UserName))
+        //{
+          //  TextView txtFrom = (TextView) convertView.findViewById(R.id.message_user);
+            //txtFrom.setText(messageFrom);
+       // }]
 
         return convertView;
     }

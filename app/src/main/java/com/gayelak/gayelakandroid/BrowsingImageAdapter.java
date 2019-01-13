@@ -33,13 +33,12 @@ class BrowsingImageAdapter extends BaseAdapter {
     String randomColors[] = {"#8C9EFF", "#536DFE", "#3D5AFE", "#304FFE", "#7C4DFF", "#651FFF", "#FF4081", "#F50057", "#29B6F6", "#03A9F4", "#69F0AE", "#00E676"};
     public BrowsingImageAdapter(Context c, ArrayList<String> itemsKeys, double screenHeight, double screenWidth)
     {
-        this.itemsKeys = itemsKeys;
         mContext = c;
+        this.itemsKeys = itemsKeys;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.screenHeight = screenHeight;
         this.screenWidth = screenWidth;
     }
-
 
     @Override
     public int getCount() {
@@ -62,12 +61,12 @@ class BrowsingImageAdapter extends BaseAdapter {
 
         View view;
         view = mInflater.inflate(R.layout.layout_browsing_image_adapter,parent,false);
-        view.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT,  (int) (screenHeight/3.5)));
+        view.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT,  (int) (screenHeight/3)));
         ImageView imageView = view.findViewById(R.id.imageView);
-        Random rand = new Random();
-        int  n = rand.nextInt(12);
-        String randomColor = randomColors[n];
-        imageView.setBackgroundColor(Color.parseColor(randomColor));
+      //  Random rand = new Random();
+      //  int  n = rand.nextInt(12);
+      //  String randomColor = randomColors[n];
+        imageView.setBackgroundColor(Color.parseColor("#eef0f5"));
         StorageReference imageStorageRef = FirebaseStorage.getInstance().getReference().child("Items_Photos").child(itemsKeys.get(position)).child("1.jpeg");
         Glide.with(mContext)
                 .using(new FirebaseImageLoader())
@@ -75,5 +74,4 @@ class BrowsingImageAdapter extends BaseAdapter {
                 .into(imageView);
         return  view;
     }
-
 }

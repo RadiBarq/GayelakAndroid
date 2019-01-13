@@ -1,7 +1,10 @@
 package com.gayelak.gayelakandroid;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
@@ -24,6 +27,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -54,8 +59,9 @@ public class RegisterActivity extends AppCompatActivity{
      * Keep track of the login task to ensure we can cancel it if requested.
      */
 
+
     // UI references.
-    private AutoCompleteTextView mEmailView;
+    private EditText mEmailView;
     private EditText mPasswordView;
     private View mLoginFormView;
     private EditText mUserNameView;
@@ -63,13 +69,15 @@ public class RegisterActivity extends AppCompatActivity{
     private LottieAnimationView animationView;
     private DatabaseReference mDatabase;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.userName);
+        mEmailView = (EditText) findViewById(R.id.userName);
        // populateAutoComplete();
+
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -91,11 +99,14 @@ public class RegisterActivity extends AppCompatActivity{
             }
         });
 
-        mUserNameView = (EditText) findViewById(R.id.passwordText);
+        mUserNameView = (EditText) findViewById(R.id.passwordEditText);
         animationView = (LottieAnimationView) findViewById(R.id.lottieAnimationView);
         animationView.setVisibility(View.GONE);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mEmailView.requestFocus();
+        mEmailView.getBackground().setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
+        mPasswordView.getBackground().setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
+        mUserNameView.getBackground().setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
     }
 
     /**
@@ -187,21 +198,31 @@ public class RegisterActivity extends AppCompatActivity{
 
 
         mAuth.createUserWithEmailAndPassword(email, password).
+
             addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-
                     // Checking if user is registered successfully.
+
                     if(task.isSuccessful()){
 
                         // If user registered successfully then show this toast message.
-
                         String instanceId = FirebaseInstanceId.getInstance().getToken();
-                        String userId = task.getResult().getUser().getUid();
-                        User user = new User(email, userId, userName, instanceId);
-                        mDatabase.child("Users").child(userId).setValue(user);
-                        uploadPicture(userId);
+                       // FirebaseAuth currentUser = FirebaseAuth.getInstance();
 
+
+
+
+                        String userId = task.getResult().getUser().getUid();
+
+
+                        User user = new User(email, userId, userName, instanceId);
+                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(userName).build();
+                        task.getResult().getUser().updateProfile(profileUpdates);
+                        mDatabase.child("Users").child(userId).setValue(user);
+                        uploadPicture(userId, task.getResult().getUser());
 
                     }else{
 
@@ -216,20 +237,16 @@ public class RegisterActivity extends AppCompatActivity{
             });
     }
 
-    private void uploadPicture(String userId)
+    private void uploadPicture(String userId, FirebaseUser currentUser)
     {
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
         storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
-
-           storageRef = storageRef.child("Profile_Pictures").child(userId).child("Profile.jpg");
-
+        storageRef = storageRef.child("Profile_Pictures").child(userId).child("Profile.jpg");
 
     //    ImageView imageView =  new ImageView(this);
-
        // imageView.setImageResource(R.drawable.profile_picture);
-
       //  imageView.setDrawingCacheEnabled(true);
       //  imageView.buildDrawingCache();
 
@@ -253,13 +270,37 @@ public class RegisterActivity extends AppCompatActivity{
                 // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
 
                 stopAnimation();
+                //TODO Move to login screen
+                //Toast.makeText(RegisterActivity.this, "تم تسجيلك في جايلك بنجاح", Toast.LENGTH_LONG).show();
+                String userName = currentUser.getDisplayName();
+                String instanceId = FirebaseInstanceId.getInstance().getToken();
+                String email = currentUser.getEmail();
+                String userId = currentUser.getUid();
+                LoginActivity.user = new User(email, userId, userName, instanceId);
+                String notificationExtraIntent = getIntent().getStringExtra("notificationType");
+                //FirebaseDatabase.getInstance().getReference().child("Users").child(userId).child("instanceId").setValue(instanceId);
+                Intent intent = new Intent(RegisterActivity.this, BrowsingActivity.class);
+
+                if(notificationExtraIntent!= null)
+                {
+                    if (notificationExtraIntent.matches("normal")) {
+
+                        intent.putExtra("notificationType", "normal");
+                    }
+
+                    else if (notificationExtraIntent.matches("message"))
+                    {
+                        intent.putExtra("notificationType", "message");
+                    }
+                }
+
+                startActivity(intent);
 
                 //TODO Move to login screen
-                Toast.makeText(RegisterActivity.this, "تم تسجيلك في جايلك بنجاح", Toast.LENGTH_LONG).show();
+                //  Toast.makeText(WelcomeActivity.this, "تم تسجيلك في جايلك بنجاح", Toast.LENGTH_LONG).show();
 
             }
         });
-
     }
 
     private boolean isEmailValid(String email) {

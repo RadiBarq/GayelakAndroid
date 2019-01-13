@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.gayelak.gayelakandroid.BlockedUsersActivity">
 
-
     <ListView
         android:id="@+id/blockedList"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:background="#ffffff"
         android:divider="#ffffff"
         android:dividerHeight="20dp"
@@ -19,6 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 
 </android.support.constraint.ConstraintLayout>

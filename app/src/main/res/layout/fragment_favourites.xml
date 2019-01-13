@@ -10,11 +10,12 @@
         android:layout_height="match_parent"
         android:columnWidth="150dp"
         android:numColumns="auto_fit"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="5dp"
+        android:verticalSpacing="0dp"
+        android:horizontalSpacing="0dp"
         android:stretchMode="columnWidth"
         android:gravity="center"
         android:layout_margin="10dp"
+        android:layout_gravity="center"
         />
 
 

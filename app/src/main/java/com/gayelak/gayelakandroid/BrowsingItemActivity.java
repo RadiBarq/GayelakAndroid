@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.firebase.geofire.LocationCallback;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,7 +28,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.firebase.geofire.GeoFire;
+import com.firebase.geofire.GeoLocation;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class BrowsingItemActivity extends AppCompatActivity {
@@ -35,8 +40,11 @@ public class BrowsingItemActivity extends AppCompatActivity {
     MultiTouchViewPager viewPager;
     private LottieAnimationView loadingAnimationView;
     public static String itemId;
+    public static GeoLocation itemLocaiton;
     private DatabaseReference itemRef;
     private DatabaseReference userRef;
+    public static double currentLat;
+    public static double currentLong;
     Item item;
     TextView priceTextView;
     TextView distanceTextView;
@@ -72,7 +80,41 @@ public class BrowsingItemActivity extends AppCompatActivity {
         loadingAnimationView = (LottieAnimationView) findViewById(R.id.loadingAnimationView);
         userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId);
         playLoadingAnimation();
+        getItemLocation();
     }
+
+
+    private void getItemLocation()
+    {
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("items-location");
+        GeoFire geoFire = new GeoFire(ref);
+
+        geoFire.getLocation(itemId, new LocationCallback() {
+            @Override
+            public void onLocationResult(String key, GeoLocation location) {
+                if (location != null) {
+
+                    System.out.println(String.format("The location for key %s is [%f,%f]", key, location.latitude, location.longitude));
+                    double distance = distance(location.latitude, location.longitude, BrowsingItemActivity.currentLat, BrowsingItemActivity.currentLong, 'K');
+                    Double truncatedDistance = BigDecimal.valueOf(distance)
+                            .setScale(2, RoundingMode.HALF_UP)
+                            .doubleValue();
+                    distanceTextView.setText(String.valueOf(truncatedDistance + "كم " ));
+
+                } else {
+
+                    System.out.println(String.format("There is no location for key %s in GeoFire", key));
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.err.println("There was an error getting the GeoFire location: " + databaseError);
+            }
+        });
+    }
+
 
     private void checkIfItIsFavouriteItem()
     {
@@ -110,13 +152,11 @@ public class BrowsingItemActivity extends AppCompatActivity {
                      if (dataSnapshot.hasChild(item.userId))
                      {
                          Toast.makeText(BrowsingItemActivity.this, "هاذا المستخدم على قائمة المحذورين لا يمكن التواصل معه!", Toast.LENGTH_LONG).show();
-
-
-
                      }
 
                      else
                      {
+
                          ValueEventListener itemUserListener = new ValueEventListener() {
                              @Override
                              public void onDataChange(DataSnapshot dataSnapshot) {
@@ -128,16 +168,18 @@ public class BrowsingItemActivity extends AppCompatActivity {
 
                                     else
                                     {
+
                                         ChatActivity.itemUserId = item.userId;
                                         ChatActivity.itemUserName = item.displayName;
+                                        ChatActivity.itemId = itemId;
                                         Intent intent = new Intent(BrowsingItemActivity.this, ChatActivity.class);
                                         startActivity(intent);
+
                                     }
                              }
 
                              @Override
                              public void onCancelled(DatabaseError databaseError) {
-
 
                                  Toast.makeText(BrowsingItemActivity.this,databaseError.getMessage(), Toast.LENGTH_LONG).show();
 
@@ -167,8 +209,38 @@ public class BrowsingItemActivity extends AppCompatActivity {
             FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("items").child(itemId).removeValue();
             FirebaseDatabase.getInstance().getReference().child("Users").child(LoginActivity.user.UserId).child("sold_items").child(itemId).setValue(" ");
             finish();
+
         }
     }
+
+    private double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
+        double theta = lon1 - lon2;
+        double dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.cos(deg2rad(theta));
+        dist = Math.acos(dist);
+        dist = rad2deg(dist);
+        dist = dist * 60 * 1.1515;
+        if (unit == 'K') {
+            dist = dist * 1.609344;
+        } else if (unit == 'N') {
+            dist = dist * 0.8684;
+        }
+        return (dist);
+    }
+
+    /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    /*::  This function converts decimal degrees to radians             :*/
+    /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    private double deg2rad(double deg) {
+        return (deg * Math.PI / 180.0);
+    }
+
+    /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    /*::  This function converts radians to decimal degrees             :*/
+    /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    private double rad2deg(double rad) {
+        return (rad * 180.0 / Math.PI);
+    }
+
 
     public void onClickProfileImage(View view)
     {
@@ -240,7 +312,6 @@ public class BrowsingItemActivity extends AppCompatActivity {
       itemRef.addListenerForSingleValueEvent(postListener);
     }
 
-
     public void onClickAnimation(View view)
     {
         playAnimation(view);
@@ -261,9 +332,7 @@ public class BrowsingItemActivity extends AppCompatActivity {
 
     private void addFavouritesToFirebase(final View view)
     {
-        // add to favourites
         userRef.child("favourites").child(itemId).setValue("", new DatabaseReference.CompletionListener() {
-
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
 
@@ -295,6 +364,10 @@ public class BrowsingItemActivity extends AppCompatActivity {
                             }
                         }
                     });
+
+                    PushNotification pushNotification = new PushNotification(LoginActivity.user.UserId, itemUserId, "favourite", itemId);
+                    FirebaseDatabase.getInstance().getReference().child("notifications").child(notificationId).setValue(pushNotification);
+
                 }
 
                 else {
@@ -328,8 +401,10 @@ public class BrowsingItemActivity extends AppCompatActivity {
         });
     }
 
+
     private void initializeUri()
     {
+
         gettingImagesCounter = 0;
        final Uri [] uriArray = new Uri[item.imagesCount];
         imagesRef = FirebaseStorage.getInstance().getReference().child("Items_Photos").child(itemId);
@@ -352,7 +427,7 @@ public class BrowsingItemActivity extends AppCompatActivity {
                         priceTextView.setText(item.price);
                         titleTextView.setText(item.title);
                         descriptionTextView.setText(item.description);
-                        distanceTextView.setText("١كم");
+                        //distanceTextView.setText("١كم");
                         itemUserId = item.userId;
                         if (LoginActivity.user.UserId.matches(itemUserId))
                         {
