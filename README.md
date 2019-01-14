@@ -33,8 +33,6 @@ like price prediction and category prediction.
  <img src = 'https://firebasestorage.googleapis.com/v0/b/chottky.appspot.com/o/Gayelak%20Android%2FScreenshot_1547417757.png?alt=media&token=c24590b4-ba48-481a-a258-42760b779029' width = "200" />
  
    <img src = 'https://firebasestorage.googleapis.com/v0/b/chottky.appspot.com/o/Gayelak%20Android%2FScreenshot_1547417761.png?alt=media&token=897f66f5-a25f-4d2c-9662-50224edc2ab2' width = "200" />
-  
- <img src = 'https://firebasestorage.googleapis.com/v0/b/chottky.appspot.com/o/App%20Screenshots%2FGayelak%20Screenshots%2Fprofile_mockup.png?alt=media&token=de126992-fc01-42e2-b0eb-5d3feff9587e' width = "200" />
     
  <img src = 'https://firebasestorage.googleapis.com/v0/b/chottky.appspot.com/o/Gayelak%20Android%2FScreenshot_1547417868.png?alt=media&token=403b5b50-ed6f-41bf-9099-f7432ae1f4e4' width = "200" />
  
