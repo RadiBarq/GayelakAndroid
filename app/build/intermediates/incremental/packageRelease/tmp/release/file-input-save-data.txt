@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jan 14 01:14:50 EET 2019
+#Mon Jan 14 10:40:23 EET 2019
 17.baseType=DIRECTORY
 4.path=lib/armeabi-v7a/libclassifier_jni.so
 8.set=ASSET

@@ -268,7 +268,6 @@ public class RegisterActivity extends AppCompatActivity{
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
-
                 stopAnimation();
                 //TODO Move to login screen
                 //Toast.makeText(RegisterActivity.this, "تم تسجيلك في جايلك بنجاح", Toast.LENGTH_LONG).show();
